@@ -1,0 +1,357 @@
+!
+! Last configuration change at 21:02:21 MSK Wed Jul 29 2026
+!
+version 26.1
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+platform qfp utilization monitor load 80
+platform sslvpn use-pd
+platform console serial
+!
+hostname C8K-R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+clock timezone MSK 3 0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip domain name lab
+!
+!
+!
+login on-success log
+!
+!
+subscriber templating
+!
+! 
+! 
+! 
+! 
+!
+mpls label range 20000 29999
+mpls ldp explicit-null
+l2vpn evpn
+ logging vpws vc-state
+ replication-type ingress
+ router-id Loopback0
+!
+l2vpn evpn instance 10010 vlan-based
+ route-target export 65000:10010
+ route-target import 65000:10010
+ ip local-learning disable
+!
+l2vpn evpn instance 10011 vlan-based
+ route-target export 65000:10011
+ route-target import 65000:10011
+ ip local-learning disable
+!
+l2vpn evpn instance 20020 vlan-bundle
+ route-target export 65000:20020
+ route-target import 65000:20020
+ ip local-learning disable
+!
+l2vpn evpn instance 30030 vlan-aware
+ route-target export 65000:30030
+ route-target import 65000:30030
+ ip local-learning disable
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-1045461536
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1045461536
+ revocation-check none
+ rsakeypair TP-self-signed-1045461536
+ hash sha512
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+ hash sha512
+!
+!
+crypto pki certificate chain TP-self-signed-1045461536
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31303435 34363135 3336301E 170D3236 30373238 31303436 
+  30355A17 0D333630 37323731 30343630 355A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 30343534 
+  36313533 36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 01009C28 ACAB6746 3405DCEC 68DA452D 96309151 61E9EDE6 633708FC 
+  F58C3EE3 1E9E05B7 C8A25254 F7D4710B A24DDC48 97CC3786 55979706 6A0D9775 
+  8A7E4A41 BAD24D4F 9A9FBE5B 97A0A701 9782FCBF A55173EF CD99C567 54EAC11F 
+  367A2043 FB88E230 5DF8F731 309B2F7A 0A16F26D 00D1EF62 37BE2541 C9722763 
+  030F332F D4D305AD 0ACA7148 5F6538D0 BB56FA84 D153FF83 7D793CC3 E2D461AD 
+  C8794D9C DD924AAC DE135BD1 86683875 FA6AA756 B6B671EF 5B612936 D08D2A4A 
+  C4F2AA3A C01D98EE B2EA3871 EAE26D56 829D285F 60C75CDF B62D3329 D50C93CD 
+  60090D9F CE289D4B 233D11DA EFA6CEF6 B8041930 37CE6480 E5FF79CD 1F4896C4 
+  56F8D950 B4A10203 010001A3 53305130 1D060355 1D0E0416 04146509 07C6F97E 
+  B0A18548 7BCB43D8 B6AD41A8 0404301F 0603551D 23041830 16801465 0907C6F9 
+  7EB0A185 487BCB43 D8B6AD41 A8040430 0F060355 1D130101 FF040530 030101FF 
+  300D0609 2A864886 F70D0101 0D050003 82010100 53F6D4A6 1E43D2D0 AA6CE1DF 
+  AF47F044 5F1C7EB8 3EBEA520 7B0A925C AF65F5DA F93AE1FE EA3CDE55 BB39F2B1 
+  E349F0E9 FEA75E70 F1B2493F 65CB9BDD D0494118 0A193012 152D5FD4 F3F70AC2 
+  EC8B47E6 4C8DAF3C 8F793993 42D00F0A 26BF11F8 8109957D 77EED9F6 71B7ADB4 
+  4D5550CB 1318122E 9797C138 39616750 31FB4E21 AE4BA5B0 B8B50C3D 0064D699 
+  7432DD0F 6C37B5DD D1D4AAEE AD08825F 2BE371F7 F75A6A89 42393B98 D23BCCB6 
+  C0734F7C 8674F94F E673A809 D766C754 AEB71340 D8F43D59 FA4661E8 383CA868 
+  DEA68D43 E2C2B163 352BFCE1 770413C8 C9103F17 A85FD928 EB185E4E E5361E28 
+  DF7D3D2D BE39F312 DBEE8429 DDA82233 A6E81A8A
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+        quit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid C8000V sn 96ATFZURBB5
+license boot level network-premier addon dna-premier
+memory free low-watermark processor 29946
+diagnostic bootup level minimal
+!
+!
+spanning-tree extend system-id
+!
+!
+!
+redundancy
+bridge-domain 1010 
+ member GigabitEthernet2 service-instance 1010
+ member evpn-instance 10010
+!
+bridge-domain 1011 
+ member GigabitEthernet2 service-instance 1011
+ member evpn-instance 10011
+!
+bridge-domain 2020 
+ member GigabitEthernet2 service-instance 2020
+ member evpn-instance 20020
+!
+bridge-domain 3030 
+ member GigabitEthernet2 service-instance 3030
+ member evpn-instance 30030 ethernet-tag 3030
+!
+bridge-domain 3031 
+ member GigabitEthernet2 service-instance 3031
+ member evpn-instance 30030 ethernet-tag 3031
+!
+bridge-domain 3032 
+ member GigabitEthernet2 service-instance 3032
+ member evpn-instance 30030 ethernet-tag 3032
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ description Router-ID
+ ip address 10.255.255.2 255.255.255.255
+ ip proxy-arp
+!
+interface GigabitEthernet1
+ description to_IOL-R6#e0/2
+ ip address 10.2.6.2 255.255.255.0
+ ip proxy-arp
+ ip ospf network point-to-point
+ negotiation auto
+!
+interface GigabitEthernet2
+ description to_IOL-CE9#e0/0
+ no ip address
+ ip proxy-arp
+ negotiation auto
+ service instance 1010 ethernet
+  encapsulation dot1q 1010
+ !
+ service instance 1011 ethernet
+  encapsulation dot1q 1011
+ !
+ service instance 2020 ethernet
+  encapsulation dot1q 2020-2022
+ !
+ service instance 3030 ethernet
+  encapsulation dot1q 3030
+ !
+ service instance 3031 ethernet
+  encapsulation dot1q 3031
+ !
+ service instance 3032 ethernet
+  encapsulation dot1q 3032
+ !
+ service instance 4012 ethernet
+  encapsulation dot1q 4012
+  rewrite ingress tag pop 1 symmetric
+ !
+!
+interface GigabitEthernet3
+ description to_Scapy-CE12#e2
+ no ip address
+ ip proxy-arp
+ negotiation auto
+!
+interface GigabitEthernet4
+ no ip address
+ ip proxy-arp
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ router-id 10.255.255.2
+ network 10.0.0.0 0.255.255.255 area 0
+ mpls ldp autoconfig
+!
+router bgp 65000
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor PG_RR peer-group
+ neighbor PG_RR remote-as 65000
+ neighbor PG_RR update-source Loopback0
+ neighbor 10.255.255.5 peer-group PG_RR
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family l2vpn evpn
+  neighbor PG_RR send-community both
+  neighbor 10.255.255.5 activate
+ exit-address-family
+!
+ip forward-protocol nd
+ip forward-protocol udp tftp
+ip telnet comport enable
+!
+ip bgp-community new-format
+no ip http server
+ip http authentication local
+ip http secure-server
+ip tftp blocksize 512
+ip ftp passive
+ip ssh bulk-mode 131072
+!
+mpls ldp router-id Loopback0 force
+!
+l2vpn evpn instance 12 point-to-point
+ route-target export 65000:12
+ route-target import 65000:12
+ vpws context EVI12
+  service target 990012 source 990012
+  member GigabitEthernet2 service-instance 4012
+ !
+!
+!
+!
+control-plane
+!
+!
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ activation-character 13
+ logging synchronous
+ width 511
+ stopbits 1
+line aux 0
+ activation-character 13
+line vty 0 4
+ activation-character 13
+ login
+ transport input ssh
+!
+ntp allow mode control 3
+!
+!
+!
+!
+!
+!
+end

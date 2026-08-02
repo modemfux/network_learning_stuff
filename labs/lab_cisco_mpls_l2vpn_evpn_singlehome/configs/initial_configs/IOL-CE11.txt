@@ -1,0 +1,123 @@
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+!
+hostname IOL-CE11
+!
+clock timezone MSK 3 0
+!
+no ip domain lookup
+!
+no spanning-tree vlan 1-4094
+!
+vlan 1010-1011,2020-2022,3030-3032,4034,4043 
+!
+no cdp run
+!
+interface Ethernet0/0
+ no shutdown
+ description to_C8K-R4#Gi2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan none
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Ethernet0/1
+ description to_C8K-R3#Gi3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan none
+ switchport mode trunk
+ switchport nonegotiate
+ shutdown
+!
+interface Ethernet0/2
+ description to_C8K-R4#Gi3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan none
+ switchport mode trunk
+ switchport nonegotiate
+ shutdown
+!
+interface Ethernet0/3
+ no shutdown
+ description STUB_INTERFACE_FOR_SVI
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Vlan1010
+ no shutdown
+ description EVI10010-VLAN-BASED
+ mac-address 0000.1010.bbbb
+ ip address 172.16.10.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan1011
+ no shutdown
+ description EVI10011-VLAN-BASED
+ mac-address 0000.1011.bbbb
+ ip address 172.16.11.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan2020
+ no shutdown
+ description EVI20020-VLAN-BUNDLE
+ mac-address 0000.2020.bbbb
+ ip address 172.16.20.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan2021
+ no shutdown
+ description EVI20020-VLAN-BUNDLE
+ mac-address 0000.2021.bbbb
+ ip address 172.16.21.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan2022
+ no shutdown
+ description EVI20020-VLAN-BUNDLE
+ mac-address 0000.2022.bbbb
+ ip address 172.16.22.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan3030
+ no shutdown
+ description EVI30030-VLAN-AWARE-TAG30
+ mac-address 0000.3030.bbbb
+ ip address 172.16.30.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan3031
+ no shutdown
+ description EVI30030-VLAN-AWARE-TAG31
+ mac-address 0000.3031.bbbb
+ ip address 172.16.31.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan3032
+ no shutdown
+ description EVI30030-VLAN-AWARE-TAG32
+ mac-address 0000.3032.bbbb
+ ip address 172.16.32.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan4034
+ no shutdown
+ description EVI34-VPWS-CE10-CE11
+ mac-address 0000.4034.bbbb
+ ip address 172.16.34.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan4043
+ no shutdown
+ description EVI34-VPWS-CE10-CE11
+ mac-address 0000.4043.bbbb
+ ip address 172.16.43.11 255.255.255.0
+ no ip proxy-arp
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 511
+ transport output none
+!

@@ -1,0 +1,226 @@
+!
+! Last configuration change at 21:08:48 MSK Wed Jul 29 2026
+!
+version 17.12
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+!
+hostname IOL-CE11
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+no ip icmp rate-limit unreachable
+!
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+ip audit notify log
+ip audit po max-events 100
+no ip domain lookup
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+vtp version 1
+multilink bundle-name authenticated
+!         
+crypto pki trustpoint TP-self-signed-67131398
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-67131398
+ revocation-check none
+ rsakeypair TP-self-signed-67131398
+ hash sha256
+!
+!
+crypto pki certificate chain TP-self-signed-67131398
+ certificate self-signed 01
+  3082032C 30820214 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  2F312D30 2B060355 04030C24 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 36373133 31333938 301E170D 32363037 32393036 33323331 
+  5A170D33 36303732 38303633 3233315A 302F312D 302B0603 5504030C 24494F53 
+  2D53656C 662D5369 676E6564 2D436572 74696669 63617465 2D363731 33313339 
+  38308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201 
+  0100A54C 28735F97 D863B249 32A06085 6523A842 793F6392 DCA7FB37 ECDFD735 
+  5AD893A2 B17715C1 05B433C9 D7DC34B4 9B49DA39 BE6300B9 98CCFD88 740190CC 
+  508CE622 E96CDE62 77DA6F57 019AF42F 1B165A43 BAE5B9D4 6F7B86B0 DC66F0C7 
+  33112A76 D2C2048A 0B6FFD2A 346AF5A4 FBB6A91C 587E0131 8533C620 FC1E9FCB 
+  0359B929 F081E2D7 3F45ECB4 B15B86CA 72D2A8A4 462ED3CB 9921394B 9C041070 
+  40F774F5 CF8BB383 46E93904 28439700 40A6717E EEA652FC 19E06ECD 4D9B5F8F 
+  204AF059 7BEBB54D B674FC90 102A75C0 636B405E 2D6AD0A5 B47C3A9A 7710D960 
+  0345945B 4BDBBA61 35487B6B 677E179F 2C3E35E2 12F86961 AB701AEA 562DA8BC 
+  DAB90203 010001A3 53305130 1D060355 1D0E0416 0414BDEA DF50D900 B4D6ADCF 
+  9B4D80E1 464B1390 7901301F 0603551D 23041830 168014BD EADF50D9 00B4D6AD 
+  CF9B4D80 E1464B13 90790130 0F060355 1D130101 FF040530 030101FF 300D0609 
+  2A864886 F70D0101 0B050003 82010100 3E3D4397 EBBEC1DB 677EA8CB 8B6069B6 
+  9E885314 09FB58E4 98BAA4C2 A8C6F28F 85C4CB8D 843977C8 9EDDA5EA C5976842 
+  6162DF5F 9396911B 6E51DC2A 58B70696 4BB5CE65 60B586DC 9EC2D5ED E6E7BC29 
+  3D27BC33 870F2618 86A065F5 4E2F8868 027C3EA9 8A75FA91 E18A729E AA450A3D 
+  B508AC58 2C3CC713 E91BF990 19129044 12000429 D848D67A 83C6864A 3FBBA1C5 
+  795EFDA1 F5B2D6E8 C4F294A3 094A1376 83E240F2 CA905C78 13734926 F17970AA 
+  99765F1B EC830A45 9B685997 2DAAC11B 53DAF71D BE1EE46F BD82D2D3 BB60F2F2 
+  6ED982D6 D750FEF7 BF2B52EF A0458847 634C3F9E 6FA0C952 94083B1F C9F8572B 
+  E2EC88B7 B4BE24F1 C8279673 1EE34E99
+        quit
+!
+!
+memory free low-watermark processor 80589
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+no spanning-tree vlan 1-4094
+!         
+!
+vlan internal allocation policy ascending
+!
+vlan 1010-1011,2020-2022,3030-3032,4034,4043 
+no cdp log mismatch duplex
+no cdp run
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ description to_C8K-R4#Gi2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1010,1011,2020-2022,3030-3033,4034,4043
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Ethernet0/1
+ description to_C8K-R3#Gi3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan none
+ switchport mode trunk
+ switchport nonegotiate
+ shutdown
+!
+interface Ethernet0/2
+ description to_C8K-R4#Gi3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan none
+ switchport mode trunk
+ switchport nonegotiate
+ shutdown
+!
+interface Ethernet0/3
+ description STUB_INTERFACE_FOR_SVI
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Vlan1010
+ description EVI10010-VLAN-BASED
+ mac-address 0000.1010.bbbb
+ ip address 172.16.10.11 255.255.255.0
+ no ip proxy-arp
+!         
+interface Vlan1011
+ description EVI10011-VLAN-BASED
+ mac-address 0000.1011.bbbb
+ ip address 172.16.11.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan2020
+ description EVI20020-VLAN-BUNDLE
+ mac-address 0000.2020.bbbb
+ ip address 172.16.20.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan2021
+ description EVI20020-VLAN-BUNDLE
+ mac-address 0000.2021.bbbb
+ ip address 172.16.21.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan2022
+ description EVI20020-VLAN-BUNDLE
+ mac-address 0000.2022.bbbb
+ ip address 172.16.22.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan3030
+ description EVI30030-VLAN-AWARE-TAG30
+ mac-address 0000.3030.bbbb
+ ip address 172.16.30.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan3031
+ description EVI30030-VLAN-AWARE-TAG31
+ mac-address 0000.3031.bbbb
+ ip address 172.16.31.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan3032
+ description EVI30030-VLAN-AWARE-TAG32
+ mac-address 0000.3032.bbbb
+ ip address 172.16.32.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan4034
+ description EVI34-VPWS-CE10-CE11
+ mac-address 0000.4034.bbbb
+ ip address 172.16.34.11 255.255.255.0
+ no ip proxy-arp
+!
+interface Vlan4043
+ description EVI34-VPWS-CE10-CE11
+ mac-address 0000.4043.bbbb
+ ip address 172.16.43.11 255.255.255.0
+ no ip proxy-arp
+!
+ip forward-protocol nd
+!
+!
+ip tcp synwait-time 5
+ip http server
+ip http secure-server
+ip ssh bulk-mode 131072
+!
+!
+!
+!
+!
+!
+control-plane
+!         
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 511
+ transport output none
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+ transport input ssh
+!
+!
+end
+
+IOL-CE11#

@@ -1,0 +1,50 @@
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+!
+hostname C8K-R3
+!
+clock timezone MSK 3 0
+!
+no ip domain lookup
+ip domain name lab
+!
+mpls label range 30000 39999
+mpls ldp explicit-null
+!         
+license boot level network-premier addon dna-premier
+!
+interface Loopback0
+ description Router-ID
+ ip address 10.255.255.3 255.255.255.255
+!
+interface GigabitEthernet1
+ no shutdown
+ description to_IOL-R7#e0/1
+ ip address 10.3.7.3 255.255.255.0
+ ip ospf network point-to-point
+!
+interface GigabitEthernet2
+ no shutdown
+ description to_IOL-CE10#e0/0
+ no ip address
+!
+interface GigabitEthernet3
+ no shutdown
+ description to_IOL-CE11#e0/0
+ no ip address
+!
+router ospf 1
+ router-id 10.255.255.3
+ network 10.0.0.0 0.255.255.255 area 0
+ mpls ldp autoconfig
+!
+ip bgp-community new-format
+!
+mpls ldp router-id Loopback0 force
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 511
+!

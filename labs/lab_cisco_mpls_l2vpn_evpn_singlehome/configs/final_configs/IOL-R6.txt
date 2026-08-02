@@ -1,0 +1,172 @@
+!
+version 17.16
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+!
+hostname IOL-R6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+mpls label range 60000 69999
+mpls ldp explicit-null
+!
+!
+crypto pki trustpoint TP-self-signed-67121153
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-67121153
+ revocation-check none
+ rsakeypair TP-self-signed-67121153
+ hash sha512
+!
+!
+crypto pki certificate chain TP-self-signed-67121153
+ certificate self-signed 01
+  3082032C 30820214 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030 
+  2F312D30 2B060355 04030C24 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 36373132 31313533 301E170D 32363037 32393036 33323238 
+  5A170D33 36303732 38303633 3232385A 302F312D 302B0603 5504030C 24494F53 
+  2D53656C 662D5369 676E6564 2D436572 74696669 63617465 2D363731 32313135 
+  33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201 
+  01009F94 098E654C 19D071F0 F24D3A11 C8DAAE18 5EFEC7F5 45E26962 A0DA29FD 
+  8E894618 2F0CADA8 10EF1388 CBB78D66 341D9C40 82C3733F ADB170CE 8B3DCABA 
+  7336218D 256DE854 E616F16C FDE9ECC5 81337B3D 78E5B6AA 566EED86 056F07A7 
+  F01DBCDD D6A1B8B1 4FB839AD 49676211 2DBF5FE0 6DE928B1 33D9CF28 2D27F360 
+  BCFF0EB9 C06E7E3A BCA83537 08E77CF0 26FAF443 0FC133BB 7D5170A4 563A8CCC 
+  E10A1E1F 300AA53F 431E9D39 4EE01AA0 4821E403 B7228D1D 85C24C03 23BCD497 
+  387F1859 DE270C25 4D2EBD1A AF39E912 B2B6E7CA F22CFF22 A899E3C9 2E952C87 
+  EC674FEA 43A3CA6F 61B0456F B6007A2F 1AB67116 71BB6ABA 066BB799 C1910518 
+  0F3D0203 010001A3 53305130 1D060355 1D0E0416 04149551 1DDCC9DD 153A6CDF 
+  C9C2F458 2A1B7EDE E1BF301F 0603551D 23041830 16801495 511DDCC9 DD153A6C 
+  DFC9C2F4 582A1B7E DEE1BF30 0F060355 1D130101 FF040530 030101FF 300D0609 
+  2A864886 F70D0101 0D050003 82010100 05D71D1A B03F0580 E57F5668 FDD0D901 
+  68B8A4BB 59EF721F B9F48C79 1E8AFA17 E663C6BB 33B374D7 3EA326FC BFEF5898 
+  4D06D990 2D00C967 83E4C319 DC3D5322 1615016B B3186C98 9479C12F E1B97406 
+  CCCE26AB 64BFFCFC C9495370 965CF767 3E28D698 17AA10C7 0F2AA6A4 1C8FB651 
+  D39BD1EE 114C48C2 9C698F97 1C9FD5DD 6C22E769 EC2759DE ED81FB41 4C27F358 
+  4EE8B512 D908158F 2A45630B F3199CBA 1C8AA106 B9F461C6 E10152B4 7798BDFC 
+  DB4162D1 0C5D1337 687A54AB 1B00B133 BF702C26 972A990C 5BA981E2 C87D0873 
+  E3F6A7D4 CA031F1A BDDC66CD C83FACEF 9319E5E5 D808E07F D26AB3BE F41EC76A 
+  22D4AF50 9D2E63E3 DD64058C 79BFD3D0
+        quit
+!
+!
+memory free low-watermark processor 79983
+!
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+no cdp log mismatch duplex
+no cdp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description Router-ID
+ ip address 10.255.255.6 255.255.255.255
+!
+interface Ethernet0/0
+ description to_C8K-R5#Gi1
+ ip address 10.5.6.6 255.255.255.0
+ ip ospf network point-to-point
+!
+interface Ethernet0/1
+ description to_C8K-R1#Gi1
+ ip address 10.1.6.6 255.255.255.0
+ ip ospf network point-to-point
+!
+interface Ethernet0/2
+ description to_C8K-R2#Gi1
+ ip address 10.2.6.6 255.255.255.0
+ ip ospf network point-to-point
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 10.255.255.6
+ network 10.0.0.0 0.255.255.255 area 0
+ mpls ldp autoconfig
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+ip bgp-community new-format
+ip tcp synwait-time 5
+!
+ip http server
+ip http secure-server
+ip ssh bulk-mode 131072
+no logging btrace
+mpls ldp router-id Loopback0 force
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 511
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+ transport input ssh
+!
+!
+!
+!
+end
