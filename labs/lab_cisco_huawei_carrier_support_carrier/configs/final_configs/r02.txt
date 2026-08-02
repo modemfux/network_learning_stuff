@@ -1,0 +1,170 @@
+!
+! Last configuration change at 20:38:30 MSK Tue Sep 9 2025
+!
+version 15.7
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+no service password-encryption
+!
+hostname R02
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition CSC_1
+ rd 10.255.255.2:100
+ !
+ address-family ipv4
+  route-target export 64500:100
+  route-target import 64500:100
+ exit-address-family
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 20000 29999
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+lldp run
+no cdp run
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.255.255.2 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Ethernet0/0
+ ip address 10.2.5.2 255.255.255.0
+ ip ospf network point-to-point
+ ip ospf 1 area 0
+ duplex auto
+ mpls ip
+!
+interface Ethernet0/1
+ vrf forwarding CSC_1
+ ip address 172.16.27.2 255.255.255.0
+ duplex auto
+ mpls bgp forwarding
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+ duplex auto
+!
+router ospf 1
+ router-id 10.255.255.2
+!
+router bgp 64500
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 10.255.255.5 remote-as 64500
+ neighbor 10.255.255.5 update-source Loopback0
+ !
+ address-family vpnv4
+  neighbor 10.255.255.5 activate
+  neighbor 10.255.255.5 send-community both
+ exit-address-family
+ !
+ address-family ipv4 vrf CSC_1
+  redistribute connected
+  neighbor 172.16.27.7 remote-as 65000
+  neighbor 172.16.27.7 update-source Ethernet0/1
+  neighbor 172.16.27.7 activate
+  neighbor 172.16.27.7 send-community
+  neighbor 172.16.27.7 send-label
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ipv6 ioam timestamp
+!
+!
+mpls ldp router-id Loopback0 force
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 512
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

@@ -1,0 +1,149 @@
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R08
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 80000 89999
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+lldp run
+no cdp run
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.255.8 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 172.16.38.8 255.255.255.0
+ duplex auto
+!
+interface Ethernet0/1
+ ip address 192.168.128.8 255.255.255.0
+ ip ospf network point-to-point
+ duplex auto
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+ duplex auto
+!
+router ospf 1
+ mpls ldp autoconfig
+ router-id 192.168.255.8
+ network 192.168.0.0 0.0.255.255 area 0
+!
+router bgp 65000
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RRC peer-group
+ neighbor RRC remote-as 65000
+ neighbor RRC update-source Loopback0
+ neighbor 192.168.255.12 peer-group RRC
+ !
+ address-family vpnv4
+  neighbor RRC send-community both
+  neighbor RRC route-reflector-client
+  neighbor 192.168.255.12 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ipv6 ioam timestamp
+!
+!
+mpls ldp router-id Loopback0 force
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

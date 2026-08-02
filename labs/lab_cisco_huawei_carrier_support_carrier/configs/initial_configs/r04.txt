@@ -1,0 +1,103 @@
+#
+clock timezone MSK add 03:00:00
+#
+sysname NE40-R04
+#
+ip vpn-instance CSC_1
+ ipv4-family
+  route-distinguisher 10.255.255.4:100
+  vpn-target 64500:100 export-extcommunity
+  vpn-target 64500:100 import-extcommunity
+#
+mpls lsr-id 10.255.255.4
+#
+mpls
+ label advertise explicit-null
+#
+mpls ldp
+ lsr-id 10.255.255.4
+ #
+ ipv4-family
+#
+interface Ethernet1/0/0
+ undo shutdown
+ ip address 10.4.5.4 255.255.255.0
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls ldp
+ undo dcn
+ undo dcn mode vlan
+#
+interface Ethernet1/0/1
+ undo shutdown
+ ip binding vpn-instance CSC_1
+ ip address 172.16.49.4 255.255.255.0
+ undo dcn
+ undo dcn mode vlan
+#
+interface Ethernet1/0/2
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/3
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/4
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/5
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/6
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/7
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/8
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/9
+ shutdown
+ undo dcn mode vlan
+#
+interface GigabitEthernet0/0/0
+ undo shutdown
+#
+interface LoopBack0
+ ip address 10.255.255.4 255.255.255.255
+ ospf enable 1 area 0.0.0.0
+#
+bgp 64500
+ undo default ipv4-unicast
+ peer 10.255.255.5 as-number 64500
+ peer 10.255.255.5 connect-interface LoopBack0
+ #
+ ipv4-family unicast
+  undo synchronization
+  undo peer 10.255.255.5 enable
+ #
+ ipv4-family vpnv4
+  policy vpn-target
+  peer 10.255.255.5 enable
+ #
+ ipv4-family vpn-instance CSC_1
+  import-route direct
+#
+ospf 1 router-id 10.255.255.4
+ area 0.0.0.0
+#
+undo dcn
+#
+lldp enable
+#
+user-interface con 0
+ idle-timeout 1440 0
+#

@@ -1,0 +1,186 @@
+!
+! Last configuration change at 19:43:14 MSK Fri Sep 12 2025
+!
+version 15.7
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+no service password-encryption
+!
+hostname R07
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 70000 79999
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+lldp run
+no cdp run
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.255.7 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 172.16.27.7 255.255.255.0
+ duplex auto
+ mpls bgp forwarding
+!
+interface Ethernet0/1
+ ip address 192.168.197.7 255.255.255.0
+ ip ospf network point-to-point
+ duplex auto
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+ duplex auto
+!
+router ospf 1
+ mpls ldp autoconfig
+ router-id 192.168.255.7
+ network 192.168.0.0 0.0.255.255 area 0
+!
+router bgp 65000
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RRC peer-group
+ neighbor RRC remote-as 65000
+ neighbor RRC update-source Loopback0
+ neighbor 172.16.27.2 remote-as 64500
+ neighbor 172.16.27.2 update-source Ethernet0/0
+ neighbor 192.168.255.6 remote-as 65000
+ neighbor 192.168.255.6 update-source Loopback0
+ neighbor 192.168.255.11 peer-group RRC
+ neighbor 192.168.255.19 peer-group RRC
+ !
+ address-family ipv4
+  network 192.168.255.7 mask 255.255.255.255
+  neighbor RRC send-community
+  neighbor RRC route-reflector-client
+  neighbor RRC next-hop-self
+  neighbor RRC send-label
+  neighbor 172.16.27.2 activate
+  neighbor 172.16.27.2 allowas-in 1
+  neighbor 172.16.27.2 route-map RM_BGP_AS64500_IN in
+  neighbor 172.16.27.2 route-map RM_BGP_AS64500_OUT out
+  neighbor 172.16.27.2 send-label
+  neighbor 192.168.255.11 activate
+  neighbor 192.168.255.19 activate
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor RRC send-community both
+  neighbor RRC route-reflector-client
+  neighbor 192.168.255.6 activate
+  neighbor 192.168.255.6 send-community both
+  neighbor 192.168.255.11 activate
+  neighbor 192.168.255.19 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list PL_AS65000_LOOPBACKS seq 5 permit 192.168.255.0/24 ge 32
+ipv6 ioam timestamp
+!
+route-map RM_BGP_AS64500_IN permit 10
+ match ip address prefix-list PL_AS65000_LOOPBACKS
+!
+route-map RM_BGP_AS64500_OUT permit 10
+ match ip address prefix-list PL_AS65000_LOOPBACKS
+ set mpls-label
+!
+!
+mpls ldp router-id Loopback0 force
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 512
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

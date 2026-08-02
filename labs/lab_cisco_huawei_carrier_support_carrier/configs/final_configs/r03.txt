@@ -1,0 +1,163 @@
+!Software Version V800R011C00SPC607B607
+!Last configuration was updated at 2025-09-09 20:40:56+03:00
+!Last configuration was saved at 2025-09-09 21:04:52+03:00
+#
+clock timezone MSK add 03:00:00
+#
+sysname NE40-R03
+#
+set neid 18a89
+#
+vsm on-board-mode enable
+#
+snmp-agent trap type base-trap
+#
+icmp rate-limit disable
+#
+ip vpn-instance CSC_1
+ ipv4-family
+  route-distinguisher 10.255.255.3:100
+  vpn-target 64500:100 export-extcommunity
+  vpn-target 64500:100 import-extcommunity
+#
+mpls lsr-id 10.255.255.3
+#
+mpls
+ label advertise explicit-null
+#
+mpls ldp
+ lsr-id 10.255.255.3
+ accept target-hello all
+ #
+ ipv4-family
+#
+aaa
+ #
+ authentication-scheme default0
+ #
+ authentication-scheme default1
+ #
+ authentication-scheme default
+  authentication-mode local radius
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default0
+ #
+ accounting-scheme default1
+ #
+ domain default0
+ #
+ domain default1
+ #
+ domain default_admin
+#
+license
+#
+interface Ethernet1/0/0
+ undo shutdown
+ ip address 10.3.5.3 255.255.255.0
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls ldp
+ undo dcn
+ undo dcn mode vlan
+#
+interface Ethernet1/0/1
+ undo shutdown
+ ip binding vpn-instance CSC_1
+ ip address 172.16.38.3 255.255.255.0
+ undo dcn
+ undo dcn mode vlan
+#
+interface Ethernet1/0/2
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/3
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/4
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/5
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/6
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/7
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/8
+ shutdown
+ undo dcn mode vlan
+#
+interface Ethernet1/0/9
+ shutdown
+ undo dcn mode vlan
+#
+interface GigabitEthernet0/0/0
+ undo shutdown
+#
+interface LoopBack0
+ ip address 10.255.255.3 255.255.255.255
+ ospf enable 1 area 0.0.0.0
+#
+interface NULL0
+#
+bgp 64500
+ undo default ipv4-unicast
+ peer 10.255.255.5 as-number 64500
+ peer 10.255.255.5 connect-interface LoopBack0
+ #
+ ipv4-family unicast
+  undo synchronization
+  undo peer 10.255.255.5 enable
+ #
+ ipv4-family vpnv4
+  policy vpn-target
+  peer 10.255.255.5 enable
+ #
+ ipv4-family vpn-instance CSC_1
+  import-route direct
+  peer 172.16.38.8 as-number 65000
+  peer 172.16.38.8 connect-interface Ethernet1/0/1
+  peer 172.16.38.8 route-policy RP_BGP_SEND_LABELED export
+  peer 172.16.38.8 label-route-capability
+  peer 172.16.38.8 advertise-community
+#
+ospf 1 router-id 10.255.255.3
+ area 0.0.0.0
+#
+undo dcn
+#
+route-policy RP_BGP_SEND_LABELED permit node 10
+ apply mpls-label
+#
+lldp enable
+#
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr aes256_cbc aes128_cbc 3des_cbc
+#
+ssh server dh-exchange min-len 1024
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr aes256_cbc aes128_cbc 3des_cbc
+#
+user-interface con 0
+ idle-timeout 1440 0
+#
+user-interface aux 0
+#
+local-aaa-server
+#
+vm-manager
+#
+return
