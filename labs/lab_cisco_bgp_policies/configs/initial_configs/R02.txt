@@ -1,0 +1,221 @@
+
+!
+version 15.7
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+no service password-encryption
+!
+hostname AS64501-PE-R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 20000 29999
+mpls ldp explicit-null
+no mpls ldp advertise-labels
+mpls ldp advertise-labels for ACL_LOOPBACKS
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ no shutdown
+ description Router-ID
+ ip address 1.0.0.2 255.255.255.255
+!
+interface Ethernet0/0
+ no shutdown
+ description NE=AS64501-PE-R3#Et0/0
+ ip address 10.2.3.2 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100
+!
+interface Ethernet0/1
+ no shutdown
+ description NE=AS64501-P-R4#Et0/1
+ ip address 10.2.4.2 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+!
+interface Ethernet0/2
+ no shutdown
+ description NE=AS64501-RR-R7#Et0/2
+ ip address 10.2.7.2 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 1000
+!
+interface Ethernet0/3
+ no shutdown
+ description NE=AS64501-PE-R1#Et0/3
+ ip address 10.1.2.2 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100
+!
+interface Ethernet1/0
+ no shutdown
+ description NE=AS64510-ISP10-R10#Et0/0
+ ip address 1.1.0.4 255.255.255.254
+ duplex auto
+!
+interface Ethernet1/1
+ no shutdown
+ description NE=AS64515-CE2-R15#Et0/1
+ ip address 1.2.0.2 255.255.255.254
+ duplex auto
+!
+interface Ethernet1/2
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet1/3
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+router isis 1
+ mpls ldp autoconfig
+ net 49.0001.0010.0000.0002.00
+ is-type level-2-only
+ advertise passive-only
+ metric-style wide
+ log-adjacency-changes
+ passive-interface Loopback0
+!
+router bgp 64501
+ bgp router-id 1.0.0.2
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RR peer-group
+ neighbor RR remote-as 64501
+ neighbor RR update-source Loopback0
+ neighbor 1.0.0.7 peer-group RR
+ neighbor 1.1.0.5 remote-as 64510
+ neighbor 1.2.0.3 remote-as 64515
+ !
+ address-family ipv4
+  network 1.0.0.0
+  redistribute connected route-map RM_BGP_RDSTB_CONNECTED
+  neighbor RR next-hop-self
+  neighbor 1.0.0.7 activate
+  neighbor 1.1.0.5 activate
+  neighbor 1.2.0.3 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+ip bgp-community new-format
+!
+no ip http server
+no ip http secure-server
+ip route 1.0.0.0 255.0.0.0 Null0
+!
+ip access-list standard ACL_LOOPBACKS
+ permit 1.0.0.0 0.0.0.255
+!
+!
+ip prefix-list PL_AS64501_SUBNETS seq 5 permit 1.0.0.0/8 le 32
+ipv6 ioam timestamp
+!
+route-map RM_BGP_RDSTB_CONNECTED permit 10
+ match ip address prefix-list PL_AS64501_SUBNETS
+!
+!
+mpls ldp router-id Loopback0
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 256
+ transport preferred none
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

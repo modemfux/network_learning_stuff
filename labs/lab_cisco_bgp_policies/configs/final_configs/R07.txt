@@ -1,0 +1,459 @@
+!
+! Last configuration change at 14:24:19 MSK Sat Jul 26 2025
+!
+version 15.7
+service timestamps debug datetime msec localtime show-timezone year
+service timestamps log datetime msec localtime show-timezone year
+no service password-encryption
+!
+hostname AS64501-RR-R7
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 70000 79999
+mpls ldp explicit-null
+no mpls ldp advertise-labels
+mpls ldp advertise-labels for ACL_LOOPBACKS
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp run
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description Router-ID
+ ip address 1.0.0.7 255.255.255.255
+!
+interface Ethernet0/0
+ no ip address
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point
+!
+interface Ethernet0/1
+ description NE=AS64501-PE-R6#Et0/1
+ ip address 10.6.7.7 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point
+ isis metric 1000
+!
+interface Ethernet0/2
+ description NE=AS64501-PE-R2#Et0/2
+ ip address 10.2.7.7 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point
+ isis metric 1000
+!
+interface Ethernet0/3
+ description NE=AS64501-PE-R3#Et0/3
+ ip address 10.3.7.7 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point
+ isis metric 1000
+!
+router isis 1
+ mpls ldp autoconfig
+ net 49.0001.0010.0000.0007.00
+ is-type level-2-only
+ advertise passive-only
+ metric-style wide
+ log-adjacency-changes
+ passive-interface Loopback0
+!
+router bgp 64501
+ bgp router-id 1.0.0.7
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RRC peer-group
+ neighbor RRC remote-as 64501
+ neighbor RRC update-source Loopback0
+ neighbor 1.0.0.1 peer-group RRC
+ neighbor 1.0.0.2 peer-group RRC
+ neighbor 1.0.0.3 peer-group RRC
+ neighbor 1.0.0.4 peer-group RRC
+ neighbor 1.0.0.5 peer-group RRC
+ neighbor 1.0.0.6 peer-group RRC
+ neighbor 1.2.0.1 remote-as 64514
+ neighbor 1.2.0.1 ebgp-multihop 255
+ neighbor 1.2.0.1 update-source Loopback0
+ !
+ address-family ipv4
+  redistribute connected route-map RM_BGP_RDSTB_CONNECTED
+  neighbor RRC send-community
+  neighbor RRC route-reflector-client
+  neighbor 1.0.0.1 activate
+  neighbor 1.0.0.2 activate
+  neighbor 1.0.0.3 activate
+  neighbor 1.0.0.4 activate
+  neighbor 1.0.0.5 activate
+  neighbor 1.0.0.6 activate
+  neighbor 1.2.0.1 activate
+  neighbor 1.2.0.1 route-map RM_BGP_RTBH_IN in
+  neighbor 1.2.0.1 route-map RM_BGP_DENY_ANY out
+ exit-address-family
+!
+ip forward-protocol nd
+!
+ip bgp-community new-format
+ip community-list standard CL_RTBH permit 64501:666
+ip community-list standard CL_ANY_NOT_ADV permit 64501:10000
+ip community-list standard CL_AS64510_NOT_ADV permit 64501:11000
+ip community-list standard CL_AS64511_NOT_ADV permit 64501:11100
+ip community-list standard CL_AS64512_NOT_ADV permit 64501:11200
+ip community-list standard CL_AS64513_NOT_ADV permit 64501:11300
+ip community-list standard CL_AS64589_NOT_ADV permit 64501:18900
+ip community-list standard CL_ANY_PREPEND_2 permit 64501:20002
+ip community-list standard CL_AS64510_PREPEND_2 permit 64501:21002
+ip community-list standard CL_AS64511_PREPEND_2 permit 64501:21102
+ip community-list standard CL_AS64512_PREPEND_2 permit 64501:21202
+ip community-list standard CL_AS64513_PREPEND_2 permit 64501:21302
+ip community-list standard CL_AS64589_PREPEND_2 permit 64501:28902
+ip community-list standard CL_ANY_PREPEND_3 permit 64501:20003
+ip community-list standard CL_AS64510_PREPEND_3 permit 64501:21003
+ip community-list standard CL_AS64511_PREPEND_3 permit 64501:21103
+ip community-list standard CL_AS64512_PREPEND_3 permit 64501:21203
+ip community-list standard CL_AS64513_PREPEND_3 permit 64501:21303
+ip community-list standard CL_AS64589_PREPEND_3 permit 64501:28903
+ip community-list standard CL_ANY_PREPEND_4 permit 64501:20004
+ip community-list standard CL_AS64510_PREPEND_4 permit 64501:21004
+ip community-list standard CL_AS64511_PREPEND_4 permit 64501:21104
+ip community-list standard CL_AS64512_PREPEND_4 permit 64501:21204
+ip community-list standard CL_AS64513_PREPEND_4 permit 64501:21304
+ip community-list standard CL_AS64589_PREPEND_4 permit 64501:28904
+ip community-list standard CL_SET_LP_100 permit 64501:30101
+ip community-list standard CL_SET_LP_300 permit 64501:30103
+ip community-list standard CL_SET_LP_500 permit 64501:30105
+!
+no ip http server
+no ip http secure-server
+ip route 192.0.2.1 255.255.255.255 Null0
+!
+ip access-list standard ACL_LOOPBACKS
+ permit 1.0.0.0 0.0.0.255
+!
+!
+ip prefix-list PL_AS64501_SUBNETS seq 5 permit 1.0.0.0/8 le 32
+!
+ip prefix-list PL_HOSTS seq 5 permit 0.0.0.0/0 ge 32
+!
+ip prefix-list PL_RFC1918 seq 5 permit 10.0.0.0/8 le 32
+ip prefix-list PL_RFC1918 seq 10 permit 172.16.0.0/12 le 32
+ip prefix-list PL_RFC1918 seq 15 permit 192.168.0.0/16 le 32
+ipv6 ioam timestamp
+!
+route-map RM_BGP_RDSTB_CONNECTED permit 10
+ match ip address prefix-list PL_AS64501_SUBNETS
+!
+route-map RM_BGP_RTBH_IN deny 10
+ match ip address prefix-list PL_RFC1918
+!
+route-map RM_BGP_RTBH_IN permit 20
+ match ip address prefix-list PL_HOSTS
+ match community CL_RTBH
+ set local-preference 400
+ set community no-export additive
+ set ip next-hop 192.0.2.1
+!
+route-map RM_BGP_DENY_ANY deny 10
+!
+route-map RM_BGP_AS64513_OUT deny 10
+ match ip address prefix-list PL_RFC1918
+!
+route-map RM_BGP_AS64513_OUT deny 20
+ match community CL_ANY_NOT_ADV
+!
+route-map RM_BGP_AS64513_OUT deny 30
+ match community CL_AS64513_NOT_ADV
+!
+route-map RM_BGP_AS64513_OUT permit 110
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64513_OUT permit 120
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64513_OUT permit 140
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64513_OUT permit 150
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64513_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64513_OUT permit 160
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64513_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64513_OUT permit 170
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64513_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64513_OUT permit 310
+ match ip address prefix-list PL_WIDE_NETS
+!
+route-map RM_BGP_AS64512_OUT deny 10
+ match ip address prefix-list PL_RFC1918
+!
+route-map RM_BGP_AS64512_OUT deny 20
+ match community CL_ANY_NOT_ADV
+!
+route-map RM_BGP_AS64512_OUT deny 30
+ match community CL_AS64512_NOT_ADV
+!
+route-map RM_BGP_AS64512_OUT permit 110
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64512_OUT permit 120
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64512_OUT permit 140
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64512_OUT permit 150
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64512_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64512_OUT permit 160
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64512_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64512_OUT permit 170
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64512_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64512_OUT permit 310
+ match ip address prefix-list PL_WIDE_NETS
+!
+route-map RM_BGP_AS64511_OUT deny 10
+ match ip address prefix-list PL_RFC1918
+!
+route-map RM_BGP_AS64511_OUT deny 20
+ match community CL_ANY_NOT_ADV
+!
+route-map RM_BGP_AS64511_OUT deny 30
+ match community CL_AS64511_NOT_ADV
+!
+route-map RM_BGP_AS64511_OUT permit 110
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64511_OUT permit 120
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64511_OUT permit 140
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64511_OUT permit 150
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64511_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64511_OUT permit 160
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64511_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64511_OUT permit 170
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64511_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64511_OUT permit 310
+ match ip address prefix-list PL_WIDE_NETS
+!
+route-map RM_BGP_AS64589_OUT deny 10
+ match ip address prefix-list PL_RFC1918
+!
+route-map RM_BGP_AS64589_OUT deny 20
+ match community CL_ANY_NOT_ADV
+!
+route-map RM_BGP_AS64589_OUT deny 30
+ match community CL_AS64589_NOT_ADV
+!
+route-map RM_BGP_AS64589_OUT permit 110
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64589_OUT permit 120
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64589_OUT permit 140
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64589_OUT permit 150
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64589_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64589_OUT permit 160
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64589_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64589_OUT permit 170
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64589_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64589_OUT permit 310
+ match ip address prefix-list PL_WIDE_NETS
+!
+route-map RM_BGP_AS64510_OUT deny 10
+ match ip address prefix-list PL_RFC1918
+!
+route-map RM_BGP_AS64510_OUT deny 20
+ match community CL_ANY_NOT_ADV
+!
+route-map RM_BGP_AS64510_OUT deny 30
+ match community CL_AS64510_NOT_ADV
+!
+route-map RM_BGP_AS64510_OUT permit 110
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64510_OUT permit 120
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64510_OUT permit 140
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_ANY_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64510_OUT permit 150
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64510_PREPEND_2
+ set as-path prepend last-as 2
+!
+route-map RM_BGP_AS64510_OUT permit 160
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64510_PREPEND_3
+ set as-path prepend last-as 3
+!
+route-map RM_BGP_AS64510_OUT permit 170
+ match ip address prefix-list PL_WIDE_NETS
+ match community CL_AS64510_PREPEND_4
+ set as-path prepend last-as 4
+!
+route-map RM_BGP_AS64510_OUT permit 310
+ match ip address prefix-list PL_WIDE_NETS
+!
+!
+mpls ldp router-id Loopback0
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 256
+ transport preferred none
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

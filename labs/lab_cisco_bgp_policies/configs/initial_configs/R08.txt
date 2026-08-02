@@ -1,0 +1,167 @@
+
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname AS64589-ISP89-R8
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ no shutdown
+ description Router-ID
+ ip address 89.0.0.8 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Ethernet0/0
+ no shutdown
+ description NE=AS64501-PE-R1#Et1/1
+ ip address 1.1.0.3 255.255.255.254
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ description NE=AS64589-ISP89-R9#Et0/1
+ ip address 89.1.0.0 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf 1 area 0
+ duplex auto
+!
+interface Ethernet0/2
+ no shutdown
+ description NE=AS64513-LG-ISP13-R13#Et0/2
+ ip address 13.1.0.1 255.255.255.254
+ duplex auto
+!
+interface Ethernet0/3
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+router ospf 1
+ router-id 89.0.0.8
+!
+router bgp 64589
+ bgp log-neighbor-changes
+ neighbor 1.1.0.2 remote-as 64501
+ neighbor 13.1.0.0 remote-as 64513
+ neighbor 89.0.0.9 remote-as 64589
+ neighbor 89.0.0.9 update-source Loopback0
+ !
+ address-family ipv4
+  network 89.0.0.0
+  redistribute connected route-map RM_BGP_RDSTB_CONNECTED
+  neighbor 1.1.0.2 activate
+  neighbor 13.1.0.0 activate
+  neighbor 89.0.0.9 activate
+  neighbor 89.0.0.9 next-hop-self
+ exit-address-family
+!
+ip forward-protocol nd
+!
+ip bgp-community new-format
+!
+no ip http server
+no ip http secure-server
+ip route 89.0.0.0 255.0.0.0 Null0
+!
+!
+ip prefix-list PL_AS64589_SUBNETS seq 5 permit 89.0.0.0/8 le 32
+ipv6 ioam timestamp
+!
+route-map RM_BGP_RDSTB_CONNECTED permit 10
+ match ip address prefix-list PL_AS64589_SUBNETS
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 256
+ transport preferred none
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

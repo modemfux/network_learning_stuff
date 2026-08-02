@@ -1,0 +1,146 @@
+
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname AS64515-CE2-R15
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+clock timezone MSK 3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ no shutdown
+ description Router-ID
+ ip address 64.5.15.15 255.255.255.255
+!
+interface Ethernet0/0
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ description NE=AS64501-PE-R2#Et1/1
+ ip address 1.2.0.3 255.255.255.254
+ duplex auto
+!
+interface Ethernet0/2
+ no shutdown
+ description NE=AS64501-PE-R3#Et1/2
+ ip address 1.2.0.5 255.255.255.254
+ duplex auto
+!
+interface Ethernet0/3
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+router bgp 64515
+ bgp log-neighbor-changes
+ network 64.5.15.0 mask 255.255.255.0
+ neighbor 1.2.0.2 remote-as 64501
+ neighbor 1.2.0.4 remote-as 64501
+!
+ip forward-protocol nd
+!
+ip bgp-community new-format
+!
+no ip http server
+no ip http secure-server
+ip route 64.5.15.0 255.255.255.0 Null0
+!
+ipv6 ioam timestamp
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ width 256
+ transport preferred none
+ transport output none
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end
