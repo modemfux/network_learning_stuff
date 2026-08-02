@@ -22,7 +22,7 @@
 
 Топология для EVE-NG / PNETLab:
 
-- EVE-NG CE: [_Exports_unetlab_export-20250726-145244.zip](./topologies/_Exports_unetlab_export-20250726-145244.zip)
+- EVE-NG CE: [eve_ng_topology_lab_cisco_bgp_policies.zip](./topologies/eve_ng_topology_lab_cisco_bgp_policies.zip)
 
 ## Задания
 
