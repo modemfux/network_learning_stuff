@@ -16,6 +16,14 @@
 
 ![Topology - LAB - Cisco - BGP Policies](./diagrams/topology_cisco_bgp_policies.drawio.png)
 
+Используемые образы:
+
+- IOL: `i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin`
+
+Топология для EVE-NG / PNETLab:
+
+- EVE-NG CE: [_Exports_unetlab_export-20250726-145244.zip](./topologies/_Exports_unetlab_export-20250726-145244.zip)
+
 ## Задания
 
 - CE1:
