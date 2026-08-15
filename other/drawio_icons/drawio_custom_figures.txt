@@ -1,0 +1,3391 @@
+## NTG
+
+<shape name="NTG Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="15" y="15" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="17.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <stroke />
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="15" y="35" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="37.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="15" y="55" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="57.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="NTG Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="15" y="15" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="17.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <stroke />
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="15" y="35" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="37.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="15" y="55" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="57.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="NTG Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="15" y="15" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="17.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <stroke />
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="15" y="35" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="37.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="15" y="55" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="57.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="NTG Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="15" y="15" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="17.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="17.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <stroke />
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="15" y="35" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="37.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="37.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="15" y="55" w="50" h="10" />
+    <fill />
+    <stroke />
+    <fillcolor color="white" />
+    <ellipse x="17.5" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <ellipse x="25.0" y="57.5" w="5" h="5" />
+    <fill />
+    <stroke />
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="45.0" y="57.5" w="15" h="5" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+## Router
+
+<shape name="Router Blue" h="80" w="80" aspect="fixed" strokewidth="2">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#005073" /> 
+    <ellipse x="10" y="10" h="60" w="60" />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="17.5" y="32.5" />
+       <line x="17.5" y="37.5" />
+       <line x="37.5" y="37.5" />
+       <line x="37.5" y="25" />
+       <line x="40" y="25" />
+       <line x="35" y="17.5" />
+       <line x="30" y="25" />
+       <line x="32.5" y="25" />
+       <line x="32.5" y="32.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="42.5" y="17.5" />
+       <line x="47.5" y="17.5" />
+       <line x="47.5" y="32.5" />
+       <line x="55" y="32.5" />
+       <line x="55" y="30" />
+       <line x="62.5" y="35" />
+       <line x="55" y="40" />
+       <line x="55" y="37.5" />
+       <line x="42.5" y="37.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="62.5" y="42.5" />
+       <line x="42.5" y="42.5" />
+       <line x="42.5" y="55" />
+       <line x="40" y="55" />
+       <line x="45" y="62.5" />
+       <line x="50" y="55" />
+       <line x="47.5" y="55" />
+       <line x="47.5" y="47.5" />
+       <line x="62.5" y="47.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="17.5" y="45" />
+       <line x="25" y="40" />
+       <line x="25" y="42.5" />
+       <line x="37.5" y="42.5" />
+       <line x="37.5" y="62.5" />
+       <line x="32.5" y="62.5" />
+       <line x="32.5" y="47.5" />
+       <line x="25" y="47.5" />
+       <line x="25" y="50" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="Router Gray" h="80" w="80" aspect="fixed" strokewidth="2">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#808080" /> 
+    <ellipse x="10" y="10" h="60" w="60" />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="17.5" y="32.5" />
+       <line x="17.5" y="37.5" />
+       <line x="37.5" y="37.5" />
+       <line x="37.5" y="25" />
+       <line x="40" y="25" />
+       <line x="35" y="17.5" />
+       <line x="30" y="25" />
+       <line x="32.5" y="25" />
+       <line x="32.5" y="32.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="42.5" y="17.5" />
+       <line x="47.5" y="17.5" />
+       <line x="47.5" y="32.5" />
+       <line x="55" y="32.5" />
+       <line x="55" y="30" />
+       <line x="62.5" y="35" />
+       <line x="55" y="40" />
+       <line x="55" y="37.5" />
+       <line x="42.5" y="37.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="62.5" y="42.5" />
+       <line x="42.5" y="42.5" />
+       <line x="42.5" y="55" />
+       <line x="40" y="55" />
+       <line x="45" y="62.5" />
+       <line x="50" y="55" />
+       <line x="47.5" y="55" />
+       <line x="47.5" y="47.5" />
+       <line x="62.5" y="47.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="17.5" y="45" />
+       <line x="25" y="40" />
+       <line x="25" y="42.5" />
+       <line x="37.5" y="42.5" />
+       <line x="37.5" y="62.5" />
+       <line x="32.5" y="62.5" />
+       <line x="32.5" y="47.5" />
+       <line x="25" y="47.5" />
+       <line x="25" y="50" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="Router Red" h="80" w="80" aspect="fixed" strokewidth="2">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#660000" /> 
+    <ellipse x="10" y="10" h="60" w="60" />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="17.5" y="32.5" />
+       <line x="17.5" y="37.5" />
+       <line x="37.5" y="37.5" />
+       <line x="37.5" y="25" />
+       <line x="40" y="25" />
+       <line x="35" y="17.5" />
+       <line x="30" y="25" />
+       <line x="32.5" y="25" />
+       <line x="32.5" y="32.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="42.5" y="17.5" />
+       <line x="47.5" y="17.5" />
+       <line x="47.5" y="32.5" />
+       <line x="55" y="32.5" />
+       <line x="55" y="30" />
+       <line x="62.5" y="35" />
+       <line x="55" y="40" />
+       <line x="55" y="37.5" />
+       <line x="42.5" y="37.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="62.5" y="42.5" />
+       <line x="42.5" y="42.5" />
+       <line x="42.5" y="55" />
+       <line x="40" y="55" />
+       <line x="45" y="62.5" />
+       <line x="50" y="55" />
+       <line x="47.5" y="55" />
+       <line x="47.5" y="47.5" />
+       <line x="62.5" y="47.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="17.5" y="45" />
+       <line x="25" y="40" />
+       <line x="25" y="42.5" />
+       <line x="37.5" y="42.5" />
+       <line x="37.5" y="62.5" />
+       <line x="32.5" y="62.5" />
+       <line x="32.5" y="47.5" />
+       <line x="25" y="47.5" />
+       <line x="25" y="50" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="Router Green" h="80" w="80" aspect="fixed" strokewidth="2">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#006600" /> 
+    <ellipse x="10" y="10" h="60" w="60" />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="17.5" y="32.5" />
+       <line x="17.5" y="37.5" />
+       <line x="37.5" y="37.5" />
+       <line x="37.5" y="25" />
+       <line x="40" y="25" />
+       <line x="35" y="17.5" />
+       <line x="30" y="25" />
+       <line x="32.5" y="25" />
+       <line x="32.5" y="32.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="42.5" y="17.5" />
+       <line x="47.5" y="17.5" />
+       <line x="47.5" y="32.5" />
+       <line x="55" y="32.5" />
+       <line x="55" y="30" />
+       <line x="62.5" y="35" />
+       <line x="55" y="40" />
+       <line x="55" y="37.5" />
+       <line x="42.5" y="37.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="62.5" y="42.5" />
+       <line x="42.5" y="42.5" />
+       <line x="42.5" y="55" />
+       <line x="40" y="55" />
+       <line x="45" y="62.5" />
+       <line x="50" y="55" />
+       <line x="47.5" y="55" />
+       <line x="47.5" y="47.5" />
+       <line x="62.5" y="47.5" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="17.5" y="45" />
+       <line x="25" y="40" />
+       <line x="25" y="42.5" />
+       <line x="37.5" y="42.5" />
+       <line x="37.5" y="62.5" />
+       <line x="32.5" y="62.5" />
+       <line x="32.5" y="47.5" />
+       <line x="25" y="47.5" />
+       <line x="25" y="50" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+## DC Switch
+
+<shape name="DC_Switch Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="12" y="14" />
+       <line x="20" y="8" />
+       <line x="20" y="12" />
+       <line x="48" y="12" />
+       <line x="48" y="16" />
+       <line x="20" y="16" />
+       <line x="20" y="20" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="12" y="30" />
+       <line x="20" y="24" />
+       <line x="20" y="28" />
+       <line x="48" y="28" />
+       <line x="48" y="32" />
+       <line x="20" y="32" />
+       <line x="20" y="36" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="68" y="22" />
+       <line x="60" y="16" />
+       <line x="60" y="20" />
+       <line x="32" y="20" />
+       <line x="32" y="24" />
+       <line x="60" y="24" />
+       <line x="60" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="68" y="38" />
+       <line x="60" y="32" />
+       <line x="60" y="36" />
+       <line x="32" y="36" />
+       <line x="32" y="40" />
+       <line x="60" y="40" />
+       <line x="60" y="44" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="22" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="46" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="12" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="34" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="56" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#005073" />
+    <path>
+       <move x="15" y="65" />
+       <line x="25" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#005073" />
+    <path>
+       <move x="21" y="65" />
+       <line x="49" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#005073" />
+    <path>
+       <move x="37" y="65" />
+       <line x="28" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#005073" />
+    <path>
+       <move x="43" y="65" />
+       <line x="53" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#005073" />
+    <path>
+       <move x="59" y="65" />
+       <line x="31" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#005073" />
+    <path>
+       <move x="65" y="65" />
+       <line x="55" y="53" />
+    </path>
+    <stroke />
+    
+
+  </foreground>
+</shape>
+
+<shape name="DC_Switch Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="12" y="14" />
+       <line x="20" y="8" />
+       <line x="20" y="12" />
+       <line x="48" y="12" />
+       <line x="48" y="16" />
+       <line x="20" y="16" />
+       <line x="20" y="20" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="12" y="30" />
+       <line x="20" y="24" />
+       <line x="20" y="28" />
+       <line x="48" y="28" />
+       <line x="48" y="32" />
+       <line x="20" y="32" />
+       <line x="20" y="36" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="68" y="22" />
+       <line x="60" y="16" />
+       <line x="60" y="20" />
+       <line x="32" y="20" />
+       <line x="32" y="24" />
+       <line x="60" y="24" />
+       <line x="60" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="68" y="38" />
+       <line x="60" y="32" />
+       <line x="60" y="36" />
+       <line x="32" y="36" />
+       <line x="32" y="40" />
+       <line x="60" y="40" />
+       <line x="60" y="44" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="22" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="46" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="12" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="34" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="56" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#808080" />
+    <path>
+       <move x="15" y="65" />
+       <line x="25" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#808080" />
+    <path>
+       <move x="21" y="65" />
+       <line x="49" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#808080" />
+    <path>
+       <move x="37" y="65" />
+       <line x="28" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#808080" />
+    <path>
+       <move x="43" y="65" />
+       <line x="53" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#808080" />
+    <path>
+       <move x="59" y="65" />
+       <line x="31" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#808080" />
+    <path>
+       <move x="65" y="65" />
+       <line x="55" y="53" />
+    </path>
+    <stroke />
+    
+
+  </foreground>
+</shape>
+
+<shape name="DC_Switch Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="12" y="14" />
+       <line x="20" y="8" />
+       <line x="20" y="12" />
+       <line x="48" y="12" />
+       <line x="48" y="16" />
+       <line x="20" y="16" />
+       <line x="20" y="20" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="12" y="30" />
+       <line x="20" y="24" />
+       <line x="20" y="28" />
+       <line x="48" y="28" />
+       <line x="48" y="32" />
+       <line x="20" y="32" />
+       <line x="20" y="36" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="68" y="22" />
+       <line x="60" y="16" />
+       <line x="60" y="20" />
+       <line x="32" y="20" />
+       <line x="32" y="24" />
+       <line x="60" y="24" />
+       <line x="60" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="68" y="38" />
+       <line x="60" y="32" />
+       <line x="60" y="36" />
+       <line x="32" y="36" />
+       <line x="32" y="40" />
+       <line x="60" y="40" />
+       <line x="60" y="44" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="22" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="46" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="12" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="34" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="56" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#660000" />
+    <path>
+       <move x="15" y="65" />
+       <line x="25" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#660000" />
+    <path>
+       <move x="21" y="65" />
+       <line x="49" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#660000" />
+    <path>
+       <move x="37" y="65" />
+       <line x="28" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#660000" />
+    <path>
+       <move x="43" y="65" />
+       <line x="53" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#660000" />
+    <path>
+       <move x="59" y="65" />
+       <line x="31" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#660000" />
+    <path>
+       <move x="65" y="65" />
+       <line x="55" y="53" />
+    </path>
+    <stroke />
+    
+
+  </foreground>
+</shape>
+
+<shape name="DC_Switch Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="12" y="14" />
+       <line x="20" y="8" />
+       <line x="20" y="12" />
+       <line x="48" y="12" />
+       <line x="48" y="16" />
+       <line x="20" y="16" />
+       <line x="20" y="20" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="12" y="30" />
+       <line x="20" y="24" />
+       <line x="20" y="28" />
+       <line x="48" y="28" />
+       <line x="48" y="32" />
+       <line x="20" y="32" />
+       <line x="20" y="36" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="68" y="22" />
+       <line x="60" y="16" />
+       <line x="60" y="20" />
+       <line x="32" y="20" />
+       <line x="32" y="24" />
+       <line x="60" y="24" />
+       <line x="60" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="68" y="38" />
+       <line x="60" y="32" />
+       <line x="60" y="36" />
+       <line x="32" y="36" />
+       <line x="32" y="40" />
+       <line x="60" y="40" />
+       <line x="60" y="44" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="22" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="46" y="48" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="12" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="34" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="56" y="64" w="12" h="6" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#006600" />
+    <path>
+       <move x="15" y="65" />
+       <line x="25" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#006600" />
+    <path>
+       <move x="21" y="65" />
+       <line x="49" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#006600" />
+    <path>
+       <move x="37" y="65" />
+       <line x="28" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#006600" />
+    <path>
+       <move x="43" y="65" />
+       <line x="53" y="53" />
+    </path>
+    <stroke />
+
+    <fillstroke />
+    <strokecolor color="#006600" />
+    <path>
+       <move x="59" y="65" />
+       <line x="31" y="53" />
+    </path>
+    <stroke />
+    
+    <fillstroke />
+    <strokecolor color="#006600" />
+    <path>
+       <move x="65" y="65" />
+       <line x="55" y="53" />
+    </path>
+    <stroke />
+    
+
+  </foreground>
+</shape>
+
+## L2 Switch Fat
+
+<shape name="L2 Switch Fat Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="8" y="19" />
+       <line x="24" y="7" />
+       <line x="24" y="15" />
+       <line x="52" y="15" />
+       <line x="52" y="23" />
+       <line x="24" y="23" />
+       <line x="24" y="31" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="8" y="47" />
+       <line x="24" y="35" />
+       <line x="24" y="43" />
+       <line x="52" y="43" />
+       <line x="52" y="51" />
+       <line x="24" y="51" />
+       <line x="24" y="59" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="72" y="33" />
+       <line x="56" y="21" />
+       <line x="56" y="29" />
+       <line x="28" y="29" />
+       <line x="28" y="37" />
+       <line x="56" y="37" />
+       <line x="56" y="45" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="72" y="61" />
+       <line x="56" y="49" />
+       <line x="56" y="57" />
+       <line x="28" y="57" />
+       <line x="28" y="65" />
+       <line x="56" y="65" />
+       <line x="56" y="73" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L2 Switch Fat Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="8" y="19" />
+       <line x="24" y="7" />
+       <line x="24" y="15" />
+       <line x="52" y="15" />
+       <line x="52" y="23" />
+       <line x="24" y="23" />
+       <line x="24" y="31" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="8" y="47" />
+       <line x="24" y="35" />
+       <line x="24" y="43" />
+       <line x="52" y="43" />
+       <line x="52" y="51" />
+       <line x="24" y="51" />
+       <line x="24" y="59" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="72" y="33" />
+       <line x="56" y="21" />
+       <line x="56" y="29" />
+       <line x="28" y="29" />
+       <line x="28" y="37" />
+       <line x="56" y="37" />
+       <line x="56" y="45" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="72" y="61" />
+       <line x="56" y="49" />
+       <line x="56" y="57" />
+       <line x="28" y="57" />
+       <line x="28" y="65" />
+       <line x="56" y="65" />
+       <line x="56" y="73" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L2 Switch Fat Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="8" y="19" />
+       <line x="24" y="7" />
+       <line x="24" y="15" />
+       <line x="52" y="15" />
+       <line x="52" y="23" />
+       <line x="24" y="23" />
+       <line x="24" y="31" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="8" y="47" />
+       <line x="24" y="35" />
+       <line x="24" y="43" />
+       <line x="52" y="43" />
+       <line x="52" y="51" />
+       <line x="24" y="51" />
+       <line x="24" y="59" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="72" y="33" />
+       <line x="56" y="21" />
+       <line x="56" y="29" />
+       <line x="28" y="29" />
+       <line x="28" y="37" />
+       <line x="56" y="37" />
+       <line x="56" y="45" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="72" y="61" />
+       <line x="56" y="49" />
+       <line x="56" y="57" />
+       <line x="28" y="57" />
+       <line x="28" y="65" />
+       <line x="56" y="65" />
+       <line x="56" y="73" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L2 Switch Fat Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="8" y="19" />
+       <line x="24" y="7" />
+       <line x="24" y="15" />
+       <line x="52" y="15" />
+       <line x="52" y="23" />
+       <line x="24" y="23" />
+       <line x="24" y="31" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="8" y="47" />
+       <line x="24" y="35" />
+       <line x="24" y="43" />
+       <line x="52" y="43" />
+       <line x="52" y="51" />
+       <line x="24" y="51" />
+       <line x="24" y="59" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="72" y="33" />
+       <line x="56" y="21" />
+       <line x="56" y="29" />
+       <line x="28" y="29" />
+       <line x="28" y="37" />
+       <line x="56" y="37" />
+       <line x="56" y="45" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="72" y="61" />
+       <line x="56" y="49" />
+       <line x="56" y="57" />
+       <line x="28" y="57" />
+       <line x="28" y="65" />
+       <line x="56" y="65" />
+       <line x="56" y="73" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+## L2 Switch Thin
+
+<shape name="L2 Switch Thin Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="8" y="20" />
+       <line x="20" y="12" />
+       <line x="20" y="18" />
+       <line x="56" y="18" />
+       <line x="56" y="22" />
+       <line x="20" y="22" />
+       <line x="20" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="8" y="48" />
+       <line x="20" y="40" />
+       <line x="20" y="46" />
+       <line x="56" y="46" />
+       <line x="56" y="50" />
+       <line x="20" y="50" />
+       <line x="20" y="56" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="72" y="32" />
+       <line x="60" y="24" />
+       <line x="60" y="30" />
+       <line x="24" y="30" />
+       <line x="24" y="34" />
+       <line x="60" y="34" />
+       <line x="60" y="40" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="72" y="60" />
+       <line x="60" y="52" />
+       <line x="60" y="58" />
+       <line x="24" y="58" />
+       <line x="24" y="62" />
+       <line x="60" y="62" />
+       <line x="60" y="68" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L2 Switch Thin Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="8" y="20" />
+       <line x="20" y="12" />
+       <line x="20" y="18" />
+       <line x="56" y="18" />
+       <line x="56" y="22" />
+       <line x="20" y="22" />
+       <line x="20" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="8" y="48" />
+       <line x="20" y="40" />
+       <line x="20" y="46" />
+       <line x="56" y="46" />
+       <line x="56" y="50" />
+       <line x="20" y="50" />
+       <line x="20" y="56" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="72" y="32" />
+       <line x="60" y="24" />
+       <line x="60" y="30" />
+       <line x="24" y="30" />
+       <line x="24" y="34" />
+       <line x="60" y="34" />
+       <line x="60" y="40" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="72" y="60" />
+       <line x="60" y="52" />
+       <line x="60" y="58" />
+       <line x="24" y="58" />
+       <line x="24" y="62" />
+       <line x="60" y="62" />
+       <line x="60" y="68" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L2 Switch Thin Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="8" y="20" />
+       <line x="20" y="12" />
+       <line x="20" y="18" />
+       <line x="56" y="18" />
+       <line x="56" y="22" />
+       <line x="20" y="22" />
+       <line x="20" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="8" y="48" />
+       <line x="20" y="40" />
+       <line x="20" y="46" />
+       <line x="56" y="46" />
+       <line x="56" y="50" />
+       <line x="20" y="50" />
+       <line x="20" y="56" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="72" y="32" />
+       <line x="60" y="24" />
+       <line x="60" y="30" />
+       <line x="24" y="30" />
+       <line x="24" y="34" />
+       <line x="60" y="34" />
+       <line x="60" y="40" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="72" y="60" />
+       <line x="60" y="52" />
+       <line x="60" y="58" />
+       <line x="24" y="58" />
+       <line x="24" y="62" />
+       <line x="60" y="62" />
+       <line x="60" y="68" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L2 Switch Thin Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Left-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="8" y="20" />
+       <line x="20" y="12" />
+       <line x="20" y="18" />
+       <line x="56" y="18" />
+       <line x="56" y="22" />
+       <line x="20" y="22" />
+       <line x="20" y="28" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="8" y="48" />
+       <line x="20" y="40" />
+       <line x="20" y="46" />
+       <line x="56" y="46" />
+       <line x="56" y="50" />
+       <line x="20" y="50" />
+       <line x="20" y="56" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned top arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="72" y="32" />
+       <line x="60" y="24" />
+       <line x="60" y="30" />
+       <line x="24" y="30" />
+       <line x="24" y="34" />
+       <line x="60" y="34" />
+       <line x="60" y="40" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-aligned bottom arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="72" y="60" />
+       <line x="60" y="52" />
+       <line x="60" y="58" />
+       <line x="24" y="58" />
+       <line x="24" y="62" />
+       <line x="60" y="62" />
+       <line x="60" y="68" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+## L3 Switch
+
+<shape name="L3 Switch Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Vertical two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="34" y="16" />
+       <line x="40" y="8" />
+       <line x="46" y="16" />
+       <line x="42" y="16" />
+       <line x="42" y="64" />
+       <line x="46" y="64" />
+       <line x="40" y="72" />
+       <line x="34" y="64" />
+       <line x="38" y="64" />
+       <line x="38" y="16" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Horizontal two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="72" y="40" />
+       <line x="64" y="34" />
+       <line x="64" y="38" />
+       <line x="16" y="38" />
+       <line x="16" y="34" />
+       <line x="08" y="40" />
+       <line x="16" y="46" />
+       <line x="16" y="42" />
+       <line x="64" y="42" />
+       <line x="64" y="46" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-to-right two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="18.8" y="27.3" />
+       <line x="17.4" y="17.4" />
+       <line x="27.3" y="18.8" />
+       <line x="24.4" y="21.6" />
+       <line x="58.4" y="55.6" />
+       <line x="61.2" y="52.7" />
+       <line x="62.6" y="62.6" />
+       <line x="52.7" y="61.2" />
+       <line x="55.6" y="58.4" />
+       <line x="21.6" y="24.4" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-to-left two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="53.7" y="17.8" />
+       <line x="63.6" y="16.4" />
+       <line x="62.2" y="26.3" />
+       <line x="59.4" y="23.4" />
+       <line x="25.4" y="57.4" />
+       <line x="28.3" y="60.2" />
+       <line x="18.4" y="61.6" />
+       <line x="19.8" y="51.7" />
+       <line x="22.6" y="54.6" />
+       <line x="56.6" y="20.6" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Big circle in center -->
+    <fillcolor color="#005073" />
+    <ellipse x="28" y="28" w="24" h="24" />
+    <fill />
+    <stroke />
+    
+<!-- Small circle in center -->
+    <fillcolor color="#ffffff" />
+    <ellipse x="34" y="34" w="12" h="12" />
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L3 Switch Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Vertical two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="34" y="16" />
+       <line x="40" y="8" />
+       <line x="46" y="16" />
+       <line x="42" y="16" />
+       <line x="42" y="64" />
+       <line x="46" y="64" />
+       <line x="40" y="72" />
+       <line x="34" y="64" />
+       <line x="38" y="64" />
+       <line x="38" y="16" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Horizontal two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="72" y="40" />
+       <line x="64" y="34" />
+       <line x="64" y="38" />
+       <line x="16" y="38" />
+       <line x="16" y="34" />
+       <line x="08" y="40" />
+       <line x="16" y="46" />
+       <line x="16" y="42" />
+       <line x="64" y="42" />
+       <line x="64" y="46" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-to-right two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="18.8" y="27.3" />
+       <line x="17.4" y="17.4" />
+       <line x="27.3" y="18.8" />
+       <line x="24.4" y="21.6" />
+       <line x="58.4" y="55.6" />
+       <line x="61.2" y="52.7" />
+       <line x="62.6" y="62.6" />
+       <line x="52.7" y="61.2" />
+       <line x="55.6" y="58.4" />
+       <line x="21.6" y="24.4" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-to-left two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="53.7" y="17.8" />
+       <line x="63.6" y="16.4" />
+       <line x="62.2" y="26.3" />
+       <line x="59.4" y="23.4" />
+       <line x="25.4" y="57.4" />
+       <line x="28.3" y="60.2" />
+       <line x="18.4" y="61.6" />
+       <line x="19.8" y="51.7" />
+       <line x="22.6" y="54.6" />
+       <line x="56.6" y="20.6" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Big circle in center -->
+    <fillcolor color="#808080" />
+    <ellipse x="28" y="28" w="24" h="24" />
+    <fill />
+    <stroke />
+    
+<!-- Small circle in center -->
+    <fillcolor color="#ffffff" />
+    <ellipse x="34" y="34" w="12" h="12" />
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L3 Switch Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Vertical two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="34" y="16" />
+       <line x="40" y="8" />
+       <line x="46" y="16" />
+       <line x="42" y="16" />
+       <line x="42" y="64" />
+       <line x="46" y="64" />
+       <line x="40" y="72" />
+       <line x="34" y="64" />
+       <line x="38" y="64" />
+       <line x="38" y="16" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Horizontal two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="72" y="40" />
+       <line x="64" y="34" />
+       <line x="64" y="38" />
+       <line x="16" y="38" />
+       <line x="16" y="34" />
+       <line x="08" y="40" />
+       <line x="16" y="46" />
+       <line x="16" y="42" />
+       <line x="64" y="42" />
+       <line x="64" y="46" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-to-right two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="18.8" y="27.3" />
+       <line x="17.4" y="17.4" />
+       <line x="27.3" y="18.8" />
+       <line x="24.4" y="21.6" />
+       <line x="58.4" y="55.6" />
+       <line x="61.2" y="52.7" />
+       <line x="62.6" y="62.6" />
+       <line x="52.7" y="61.2" />
+       <line x="55.6" y="58.4" />
+       <line x="21.6" y="24.4" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-to-left two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="53.7" y="17.8" />
+       <line x="63.6" y="16.4" />
+       <line x="62.2" y="26.3" />
+       <line x="59.4" y="23.4" />
+       <line x="25.4" y="57.4" />
+       <line x="28.3" y="60.2" />
+       <line x="18.4" y="61.6" />
+       <line x="19.8" y="51.7" />
+       <line x="22.6" y="54.6" />
+       <line x="56.6" y="20.6" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Big circle in center -->
+    <fillcolor color="#660000" />
+    <ellipse x="28" y="28" w="24" h="24" />
+    <fill />
+    <stroke />
+    
+<!-- Small circle in center -->
+    <fillcolor color="#ffffff" />
+    <ellipse x="34" y="34" w="12" h="12" />
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="L3 Switch Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+<!-- Vertical two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="34" y="16" />
+       <line x="40" y="8" />
+       <line x="46" y="16" />
+       <line x="42" y="16" />
+       <line x="42" y="64" />
+       <line x="46" y="64" />
+       <line x="40" y="72" />
+       <line x="34" y="64" />
+       <line x="38" y="64" />
+       <line x="38" y="16" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Horizontal two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="72" y="40" />
+       <line x="64" y="34" />
+       <line x="64" y="38" />
+       <line x="16" y="38" />
+       <line x="16" y="34" />
+       <line x="08" y="40" />
+       <line x="16" y="46" />
+       <line x="16" y="42" />
+       <line x="64" y="42" />
+       <line x="64" y="46" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Left-to-right two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="18.8" y="27.3" />
+       <line x="17.4" y="17.4" />
+       <line x="27.3" y="18.8" />
+       <line x="24.4" y="21.6" />
+       <line x="58.4" y="55.6" />
+       <line x="61.2" y="52.7" />
+       <line x="62.6" y="62.6" />
+       <line x="52.7" y="61.2" />
+       <line x="55.6" y="58.4" />
+       <line x="21.6" y="24.4" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Right-to-left two-headed arrow -->
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="53.7" y="17.8" />
+       <line x="63.6" y="16.4" />
+       <line x="62.2" y="26.3" />
+       <line x="59.4" y="23.4" />
+       <line x="25.4" y="57.4" />
+       <line x="28.3" y="60.2" />
+       <line x="18.4" y="61.6" />
+       <line x="19.8" y="51.7" />
+       <line x="22.6" y="54.6" />
+       <line x="56.6" y="20.6" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+<!-- Big circle in center -->
+    <fillcolor color="#006600" />
+    <ellipse x="28" y="28" w="24" h="24" />
+    <fill />
+    <stroke />
+    
+<!-- Small circle in center -->
+    <fillcolor color="#ffffff" />
+    <ellipse x="34" y="34" w="12" h="12" />
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+## Hub
+
+<shape name="Hub Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <path>
+       <move x="8" y="40" />
+       <line x="20" y="28" />
+       <line x="20" y="36" />
+       <line x="60" y="36" />
+       <line x="60" y="28" />
+       <line x="72" y="40" />
+       <line x="60" y="52" />
+       <line x="60" y="44" />
+       <line x="20" y="44" />
+       <line x="20" y="52" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="Hub Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <path>
+       <move x="8" y="40" />
+       <line x="20" y="28" />
+       <line x="20" y="36" />
+       <line x="60" y="36" />
+       <line x="60" y="28" />
+       <line x="72" y="40" />
+       <line x="60" y="52" />
+       <line x="60" y="44" />
+       <line x="20" y="44" />
+       <line x="20" y="52" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="Hub Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <path>
+       <move x="8" y="40" />
+       <line x="20" y="28" />
+       <line x="20" y="36" />
+       <line x="60" y="36" />
+       <line x="60" y="28" />
+       <line x="72" y="40" />
+       <line x="60" y="52" />
+       <line x="60" y="44" />
+       <line x="20" y="44" />
+       <line x="20" y="52" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+<shape name="Hub Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <path>
+       <move x="8" y="40" />
+       <line x="20" y="28" />
+       <line x="20" y="36" />
+       <line x="60" y="36" />
+       <line x="60" y="28" />
+       <line x="72" y="40" />
+       <line x="60" y="52" />
+       <line x="60" y="44" />
+       <line x="20" y="44" />
+       <line x="20" y="52" />
+       <close />
+    </path>
+    <fill />
+    <stroke />
+
+</foreground>
+</shape>
+
+## Workstation
+
+<shape name="Workstation Blue" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="15" y="15" w="50" h="35" arcsize="15" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="20" y="20" w="40" h="25" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <roundrect x="15" y="60" w="50" h="5" arcsize="30" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#005073" />
+    <rect x="35" y="47.5" w="10" h="15" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="Workstation Gray" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="15" y="15" w="50" h="35" arcsize="15" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="20" y="20" w="40" h="25" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <roundrect x="15" y="60" w="50" h="5" arcsize="30" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#808080" />
+    <rect x="35" y="47.5" w="10" h="15" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="Workstation Red" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="15" y="15" w="50" h="35" arcsize="15" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="20" y="20" w="40" h="25" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <roundrect x="15" y="60" w="50" h="5" arcsize="30" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#660000" />
+    <rect x="35" y="47.5" w="10" h="15" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
+
+<shape name="Workstation Green" h="80" w="80" aspect="fixed" strokewidth="inherit">
+  <connections>
+    <constraint x="0" y="0" perimeter="1" />
+    <constraint x="0.25" y="0" perimeter="1" />
+    <constraint x="0.5" y="0" perimeter="1" />
+    <constraint x="0.75" y="0" perimeter="1" />
+    <constraint x="1" y="0" perimeter="1" />
+    <constraint x="0" y="0.25" perimeter="1" />
+    <constraint x="0" y="0.5" perimeter="1" />
+    <constraint x="0" y="0.75" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="1" y="0.25" perimeter="1" />
+    <constraint x="1" y="0.5" perimeter="1" />
+    <constraint x="1" y="0.75" perimeter="1" />
+    <constraint x="1" y="1" perimeter="1" />
+    <constraint x="0" y="1" perimeter="1" />
+    <constraint x="0.25" y="1" perimeter="1" />
+    <constraint x="0.5" y="1" perimeter="1" />
+    <constraint x="0.75" y="1" perimeter="1" />
+  </connections>
+  <background>
+  </background>
+  <foreground>
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect w="80" h="80" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="2.5" y="2.5" w="75" h="75" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="15" y="15" w="50" h="35" arcsize="15" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="white" />
+    <roundrect x="20" y="20" w="40" h="25" arcsize="5" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <roundrect x="15" y="60" w="50" h="5" arcsize="30" />
+    <fill />
+    <stroke />
+
+    <fillstroke />
+    <fillcolor color="#006600" />
+    <rect x="35" y="47.5" w="10" h="15" />
+    <fill />
+    <stroke />
+
+  </foreground>
+</shape>
