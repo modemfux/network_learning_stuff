@@ -1,0 +1,244 @@
+
+!
+! Last configuration change at 16:55:30 UTC Mon Mar 18 2024
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname ISP01-R4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition CUST2
+ rd 10.255.255.4:1002
+ !
+ address-family ipv4
+  route-target export 64501:1002
+  route-target import 64501:1002
+ exit-address-family
+!
+vrf definition MGMT
+ rd 10.255.255.4:11
+ !
+ address-family ipv4
+  route-target export 64501:11
+  route-target import 64501:11
+ exit-address-family
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 40000 49999
+mpls ldp explicit-null
+mpls ldp discovery targeted-hello accept
+no mpls ldp advertise-labels
+mpls ldp advertise-labels for ACL_OWN_LOOPBACKS
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ no shutdown
+ description #Router-ID
+ ip address 10.255.255.4 255.255.255.255
+!
+interface Loopback11
+ no shutdown
+ description #MGMT
+ vrf forwarding MGMT
+ ip address 10.0.0.4 255.255.255.255
+!
+interface Ethernet0/0
+ no shutdown
+ ip address 10.2.4.4 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 10.4.5.4 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100
+!
+interface Ethernet0/2
+ no shutdown
+ ip address 10.3.4.4 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 1000
+!
+interface Ethernet0/3
+ no shutdown
+ ip address 10.4.8.4 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100
+!
+interface Ethernet1/0
+ no shutdown
+ ip address 10.4.6.4 255.255.255.0
+ ip router isis 1
+ duplex auto
+ isis network point-to-point 
+ isis metric 100
+!
+interface Ethernet1/1
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet1/2
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet1/3
+ no shutdown
+ description #toCust2
+ vrf forwarding CUST2
+ ip address 10.104.119.104 255.255.255.0
+ duplex auto
+!
+router ospf 1002 vrf CUST2
+ redistribute bgp 64501 subnets
+ network 10.0.0.0 0.255.255.255 area 0
+!
+router isis 1
+ mpls ldp autoconfig
+ net 49.0052.0102.5525.5004.00
+ is-type level-2-only
+ advertise passive-only
+ metric-style wide
+ log-adjacency-changes all
+ passive-interface Loopback0
+!
+router bgp 64501
+ bgp router-id 10.255.255.4
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RR peer-group
+ neighbor RR remote-as 64501
+ neighbor RR update-source Loopback0
+ neighbor 10.255.255.7 peer-group RR
+ neighbor 10.255.255.8 peer-group RR
+ !
+ address-family vpnv4
+  neighbor RR send-community both
+  neighbor 10.255.255.7 activate
+  neighbor 10.255.255.8 activate
+ exit-address-family
+ !
+ address-family ipv4 vrf CUST2
+  redistribute ospf 1002
+ exit-address-family
+ !
+ address-family ipv4 vrf MGMT
+  redistribute connected
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ip access-list standard ACL_OWN_LOOPBACKS
+ permit 10.255.255.0 0.0.0.255
+!
+ipv6 ioam timestamp
+!
+!
+mpls ldp router-id Loopback0 force
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+line vty 0 4
+ privilege level 15
+ logging synchronous
+ login local
+ transport input all
+!
+!
+end

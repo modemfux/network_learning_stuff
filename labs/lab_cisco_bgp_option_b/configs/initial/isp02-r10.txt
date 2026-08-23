@@ -1,0 +1,213 @@
+
+!
+! Last configuration change at 17:01:59 UTC Mon Mar 18 2024
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname ISP02-R10
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition OAM
+ rd 172.16.255.10:11
+ !
+ address-family ipv4
+  route-target export 64502:11
+  route-target import 64502:11
+ exit-address-family
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+mpls label range 100000 109999
+mpls ldp explicit-null
+mpls ldp discovery targeted-hello accept
+no mpls ldp advertise-labels
+mpls ldp advertise-labels for ACL_ISP02_LOOPBACKS
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ no shutdown
+ description #ROUTER-ID
+ ip address 172.16.255.10 255.255.255.255
+!
+interface Loopback11
+ no shutdown
+ description #OAM
+ vrf forwarding OAM
+ ip address 10.0.0.10 255.255.255.255
+!
+interface Ethernet0/0
+ no shutdown
+ ip address 172.31.112.10 255.255.255.0
+ ip ospf network point-to-point
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 172.31.111.10 255.255.255.0
+ ip ospf network point-to-point
+ duplex auto
+!
+interface Ethernet0/2
+ no shutdown
+ ip address 172.31.113.10 255.255.255.0
+ ip ospf network point-to-point
+ ip ospf cost 1000
+ duplex auto
+!
+interface Ethernet0/3
+ no shutdown
+ ip address 172.31.116.10 255.255.255.0
+ ip ospf network point-to-point
+ duplex auto
+!
+interface Ethernet1/0
+ no shutdown
+ ip address 172.31.109.10 255.255.255.0
+ ip ospf network point-to-point
+ duplex auto
+!
+interface Ethernet1/1
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet1/2
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+interface Ethernet1/3
+ no shutdown
+ no ip address
+ shutdown
+ duplex auto
+!
+router ospf 1
+ mpls ldp autoconfig
+ router-id 172.16.255.10
+ prefix-suppression
+ network 172.16.255.0 0.0.0.255 area 0
+ network 172.31.0.0 0.0.255.255 area 0
+!
+router bgp 64502
+ bgp router-id 172.16.255.10
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RR peer-group
+ neighbor RR remote-as 64502
+ neighbor RR update-source Loopback0
+ neighbor 172.16.255.15 peer-group RR
+ neighbor 172.16.255.16 peer-group RR
+ !
+ address-family vpnv4
+  neighbor RR send-community both
+  neighbor 172.16.255.15 activate
+  neighbor 172.16.255.16 activate
+ exit-address-family
+ !
+ address-family ipv4 vrf OAM
+  redistribute connected
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ip access-list standard ACL_ISP02_LOOPBACKS
+ permit 172.16.255.0 0.0.0.255
+!
+ipv6 ioam timestamp
+!
+!
+mpls ldp router-id Loopback0 force
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 30 0
+ privilege level 15
+ logging synchronous
+ login
+ transport input all
+!
+!
+end
