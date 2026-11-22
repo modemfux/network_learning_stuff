@@ -1,8 +1,8 @@
-# Bridge config
+# Linux bridge config
 
 ## Содержание
 
-- [Bridge config](#bridge-config)
+- [Linux bridge config](#linux-bridge-config)
   - [Содержание](#содержание)
   - [Базовая топология](#базовая-топология)
   - [Bridge per vlan](#bridge-per-vlan)

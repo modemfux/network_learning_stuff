@@ -15,6 +15,7 @@
 Заметки:
 
 - [OSPF DN-bit on Cisco](./info_notes/ospf_dn_bit_on_cisco/info_ospf_dn_bit_on_cisco.md)
+- [Linux bridge config](./info_notes/linux_bridge_config/linux_bridge_config.md)
 
 Прочее:
 
