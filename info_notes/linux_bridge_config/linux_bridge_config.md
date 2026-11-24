@@ -14,6 +14,7 @@
     - [Single bridge with multiple vlans - базовая конфигурация](#single-bridge-with-multiple-vlans---базовая-конфигурация)
     - [Single bridge with multiple vlans - настройка и проверка](#single-bridge-with-multiple-vlans---настройка-и-проверка)
   - [Список использованных команд](#список-использованных-команд)
+  - [Настройка bridge через /etc/network/interfaces](#настройка-bridge-через-etcnetworkinterfaces)
 
 ## Базовая топология
 
@@ -1201,3 +1202,126 @@ SW2(tcl)#
 | `ip link show master $BRIDGE_NAME`                                                         | Вывод на экран всех дочерних интерфейсов для $BRIDGE_NAME. В данном случае - вывод всех транзитных интерфейсов в бридже.                                                                                                            |
 | `ip neigh flush dev $DEV_NAME`                                                             | Очистка всех записей соседства для интерфейса `$DEV_NAME`.                                                                                                                                                                          |
 | `ip neigh show dev $DEV_NAME`                                                              | Показать "соседей" (фактически, ARP/ND-кэш) для интерфейса `$DEV_NAME`.                                                                                                                                                             |
+
+## Настройка bridge через /etc/network/interfaces
+
+Ниже приведен пример для vlan-aware bridge.
+
+**VM-1:**
+
+```bash
+[2026-11-24 21:48:21] root@deb-frr-vm:~# cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet manual
+
+auto eth2
+iface eth2 inet manual
+
+auto eth3
+iface eth3 inet manual
+
+auto eth4
+iface eth4 inet manual
+
+[2026-11-24 21:48:29] root@deb-frr-vm:~# cat /etc/network/interfaces.d/bridge0.conf
+auto Bridge0
+iface Bridge0 inet manual
+        bridge_ports eth2 eth3 eth4
+        bridge_vlan_aware yes
+        bridge_hw 00:00:00:00:00:01
+        up ip link set dev Bridge0 type bridge vlan_default_pvid 0
+        up bridge vlan add dev Bridge0 vid 10 self
+        up bridge vlan add dev Bridge0 vid 20 self
+        up bridge vlan add dev Bridge0 vid 100 self
+        up bridge vlan add dev eth2 vid 10
+        up bridge vlan add dev eth2 vid 20
+        up bridge vlan add dev eth2 vid 100 pvid 100 egress untagged
+        up bridge vlan add dev eth3 vid 10
+        up bridge vlan add dev eth3 vid 20
+        up bridge vlan add dev eth3 vid 100 pvid 100 egress untagged
+        up bridge vlan add dev eth4 vid 10
+        up bridge vlan add dev eth4 vid 20
+        up bridge vlan add dev eth4 vid 100 pvid 100 egress untagged
+
+auto Vlan10
+iface Vlan10 inet static
+        pre-up ip link add link Bridge0 dev Vlan10 type vlan id 10
+        address 172.16.10.1/24
+
+auto Vlan20
+iface Vlan20 inet static
+        pre-up ip link add link Bridge0 dev Vlan20 type vlan id 20
+        address 172.16.20.1/24
+
+auto Vlan100
+iface Vlan100 inet static
+        pre-up ip link add link Bridge0 dev Vlan100 type vlan id 100
+        address 172.16.100.1/24
+[2026-11-24 21:48:34] root@deb-frr-vm:~# bridge vlan show
+port              vlan-id
+eth2              10
+                  20
+                  100 PVID Egress Untagged
+eth3              10
+                  20
+                  100 PVID Egress Untagged
+eth4              10
+                  20
+                  100 PVID Egress Untagged
+Bridge0           10
+                  20
+                  100
+[2026-11-24 21:48:46] root@deb-frr-vm:~# ip -br -c -4 address show
+lo               UNKNOWN        127.0.0.1/8
+eth0             UP             10.250.253.233/24
+Vlan10@Bridge0   UP             172.16.10.1/24
+Vlan20@Bridge0   UP             172.16.20.1/24
+Vlan100@Bridge0  UP             172.16.100.1/24
+[2026-11-24 21:48:57] root@deb-frr-vm:~# ip -br -c link show
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
+eth0             UP             50:06:01:00:46:00 <BROADCAST,MULTICAST,UP,LOWER_UP>
+eth1             DOWN           50:06:01:00:46:01 <NO-CARRIER,BROADCAST,MULTICAST,UP>
+eth2             UP             50:06:01:00:46:02 <BROADCAST,MULTICAST,UP,LOWER_UP>
+eth3             UP             50:06:01:00:46:03 <BROADCAST,MULTICAST,UP,LOWER_UP>
+eth4             UP             50:06:01:00:46:04 <BROADCAST,MULTICAST,UP,LOWER_UP>
+Bridge0          UP             00:00:00:00:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+pimreg@NONE      UNKNOWN        <NOARP,UP,LOWER_UP>
+pim6reg@NONE     UNKNOWN        <NOARP,UP,LOWER_UP>
+Vlan10@Bridge0   UP             00:00:00:00:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+Vlan20@Bridge0   UP             00:00:00:00:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+Vlan100@Bridge0  UP             00:00:00:00:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+[2026-11-24 21:49:08] root@deb-frr-vm:~#
+```
+
+Давайте разберем подробней.
+
+В файле `/etc/network/interfaces` интересны следующие строки:
+
+- `source /etc/network/interfaces.d/*` - данная инструкция говорит о том, что все файлы с конфигурацией интерфейсов из указанной директории будут прочитаны и применены.
+- `auto eth1` - автоматическое включение интерфейса eth1.
+- `iface eth1 inet manual` - manual - это инструкция о том, что все настройки будут сделаны "вручную", без использования базовых инструкций типа "address" и т.п. Данный метод необходим, чтобы избежать явного указания IP-адреса на интерфейсе, т.к. на нем он нам не нужен.
+
+Для настройки бриджа используется отдельный файл `bridge0.conf`. Посмотрим на неизвестные нам пока строки:
+
+- `auto Bridge0` - автоматическое включение интерфейса Bridge0.
+- `iface Bridge0 inet manual` - "ручная" настройка интерфейса. Данный метод необходим, чтобы избежать явного указания IP-адреса на интерфейсе, т.к. на нем он нам не нужен.
+- `bridge_ports eth2 eth3 eth4` - добавляем в бридж указанные интерфейсы.
+- `bridge_vlan_aware yes` - делаем бридж vlan-aware (аналог `ip link set dev Bridge0 type bridge vlan_filtering 1`).
+- `bridge_hw 00:00:00:00:00:01` - задаем MAC-адрес интерфейсу Bridge0 (и, заодно, и всем его дочерним Vlan-интерфейсам).
+- `up ip link set dev Bridge0 type bridge vlan_default_pvid 0` - все инструкции, начинающиеся на `up`, выполняются при включении интерфейса. В принципе, все инструкции отсюда должны быть уже знакомы :).
+- `iface Vlan10 inet static` - настройки "статические", т.е. уже можно использовать стандартные инструкции.
+- `pre-up ip link add link Bridge0 dev Vlan10 type vlan id 10` - `pre-up` означает, что следующая команда выполняется **до** включения интерфейса. Т.е. в данном случае, перед тем, как включить интерфейс, мы его сначала создаем :).
+- `address 172.16.10.1/24` - задаем IP-адрес интерфейсу.
