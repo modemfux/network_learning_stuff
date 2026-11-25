@@ -15,6 +15,8 @@
     - [Single bridge with multiple vlans - настройка и проверка](#single-bridge-with-multiple-vlans---настройка-и-проверка)
   - [Список использованных команд](#список-использованных-команд)
   - [Настройка bridge через /etc/network/interfaces](#настройка-bridge-через-etcnetworkinterfaces)
+    - [Настройка bridge через /etc/network/interfaces - vlan-aware bridge](#настройка-bridge-через-etcnetworkinterfaces---vlan-aware-bridge)
+    - [Настройка bridge через /etc/network/interfaces - bridge per vlan](#настройка-bridge-через-etcnetworkinterfaces---bridge-per-vlan)
 
 ## Базовая топология
 
@@ -1205,7 +1207,7 @@ SW2(tcl)#
 
 ## Настройка bridge через /etc/network/interfaces
 
-Ниже приведен пример для vlan-aware bridge.
+### Настройка bridge через /etc/network/interfaces - vlan-aware bridge
 
 **VM-1:**
 
@@ -1325,3 +1327,106 @@ Vlan100@Bridge0  UP             00:00:00:00:00:01 <BROADCAST,MULTICAST,UP,LOWER_
 - `iface Vlan10 inet static` - настройки "статические", т.е. уже можно использовать стандартные инструкции.
 - `pre-up ip link add link Bridge0 dev Vlan10 type vlan id 10` - `pre-up` означает, что следующая команда выполняется **до** включения интерфейса. Т.е. в данном случае, перед тем, как включить интерфейс, мы его сначала создаем :).
 - `address 172.16.10.1/24` - задаем IP-адрес интерфейсу.
+
+### Настройка bridge через /etc/network/interfaces - bridge per vlan
+
+**VM-1:**
+
+```bash
+[2026-11-25 20:21:18] root@deb-frr-vm:~# cat /etc/network/interfaces.d/bridges.conf
+auto eth2.10
+iface eth2.10 inet manual
+
+auto eth3.10
+iface eth3.10 inet manual
+
+auto eth4.10
+iface eth4.10 inet manual
+
+auto Bridge10
+iface Bridge10 inet static
+        bridge_ports regex eth[2-4]\.10
+        bridge_hw 00:00:00:10:00:01
+        address 172.16.10.1/24
+
+auto eth2.20
+iface eth2.20 inet manual
+
+auto eth3.20
+iface eth3.20 inet manual
+
+auto eth4.20
+iface eth4.20 inet manual
+
+auto Bridge20
+iface Bridge20 inet static
+        bridge_ports regex eth[2-4]\.20
+        bridge_hw 00:00:00:20:00:01
+        address 172.16.20.1/24
+
+auto Bridge100
+iface Bridge100 inet static
+        bridge_ports regex eth[2-4]
+        bridge_hw 00:00:01:00:00:01
+        address 172.16.100.1/24
+
+
+[2026-11-25 20:21:29] root@deb-frr-vm:~# ip -br link show | grep Bridge
+Bridge10         UP             00:00:00:10:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+Bridge20         UP             00:00:00:20:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+Bridge100        UP             00:00:01:00:00:01 <BROADCAST,MULTICAST,UP,LOWER_UP>
+[2026-11-25 20:21:39] root@deb-frr-vm:~# bridge link show
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge100 state forwarding priority 32 cost 100
+5: eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge100 state forwarding priority 32 cost 100
+6: eth4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge100 state forwarding priority 32 cost 100
+7: eth2.10@eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge10 state forwarding priority 32 cost 100
+8: eth3.10@eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge10 state forwarding priority 32 cost 100
+9: eth4.10@eth4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge10 state forwarding priority 32 cost 100
+13: eth2.20@eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge20 state forwarding priority 32 cost 100
+14: eth3.20@eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge20 state forwarding priority 32 cost 100
+15: eth4.20@eth4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master Bridge20 state forwarding priority 32 cost 100
+[2026-11-25 20:21:53] root@deb-frr-vm:~# ./pinger_v3.py --vlans 10 20 100 --hosts 1-4 --addr_tmpl 172.16.{vlan}.{host}
+|            Time            | Vlan |        IP       | Tx Packets | Rx Packets | Losses |        MAC        |    Nbr State    |
+|----------------------------|:----:|:---------------:|:----------:|:----------:|:------:|-------------------|:---------------:|
+| 2026-11-25 20:22:16.389381 |  10  |   172.16.10.1   |     2      |     2      |   0    |                   |                 |
+| 2026-11-25 20:22:16.912224 |  10  |   172.16.10.2   |     2      |     2      |   0    | 00:00:00:10:00:02 |    REACHABLE    |
+| 2026-11-25 20:22:17.427209 |  10  |   172.16.10.3   |     2      |     2      |   0    | 00:00:00:10:00:03 |    REACHABLE    |
+| 2026-11-25 20:22:17.943469 |  10  |   172.16.10.4   |     2      |     2      |   0    | 00:00:00:10:00:04 |    REACHABLE    |
+| 2026-11-25 20:22:18.459193 |  20  |   172.16.20.1   |     2      |     2      |   0    |                   |                 |
+| 2026-11-25 20:22:18.988101 |  20  |   172.16.20.2   |     2      |     2      |   0    | 00:00:00:20:00:02 |    REACHABLE    |
+| 2026-11-25 20:22:19.502356 |  20  |   172.16.20.3   |     2      |     2      |   0    | 00:00:00:20:00:03 |    REACHABLE    |
+| 2026-11-25 20:22:20.019033 |  20  |   172.16.20.4   |     2      |     2      |   0    | 00:00:00:20:00:04 |    REACHABLE    |
+| 2026-11-25 20:22:20.534859 | 100  |  172.16.100.1   |     2      |     2      |   0    |                   |                 |
+| 2026-11-25 20:22:21.068114 | 100  |  172.16.100.2   |     2      |     2      |   0    | 00:00:01:00:00:02 |    REACHABLE    |
+| 2026-11-25 20:22:21.583638 | 100  |  172.16.100.3   |     2      |     2      |   0    | 00:00:01:00:00:03 |    REACHABLE    |
+| 2026-11-25 20:22:22.098139 | 100  |  172.16.100.4   |     2      |     2      |   0    | 00:00:01:00:00:04 |    REACHABLE    |
+
+Total IPs: 12. Bad: 0. Good: 12
+[2026-11-25 20:22:22] root@deb-frr-vm:~# uptime
+ 20:22:32 up 1 min,  1 user,  load average: 0,30, 0,19, 0,07
+[2026-11-25 20:22:32] root@deb-frr-vm:~# ip -d link show dev eth2.10
+7: eth2.10@eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master Bridge10 state UP mode DEFAULT group default qlen 1000
+    link/ether 50:06:01:00:46:02 brd ff:ff:ff:ff:ff:ff promiscuity 1 allmulti 1 minmtu 0 maxmtu 65535
+    vlan protocol 802.1Q id 10 <REORDER_HDR>
+    bridge_slave state forwarding priority 32 cost 100 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8001 port_no 0x1 designated_port 32769 designated_cost 0 designated_bridge 8000.0:0:0:10:0:1 designated_root 8000.0:0:0:10:0:1 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on bcast_flood on mcast_to_unicast off neigh_suppress off neigh_vlan_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off locked off mab off addrgenmode none numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 tso_max_size 65536 tso_max_segs 65535 gro_max_size 65536 gso_ipv4_max_size 65536 gro_ipv4_max_size 65536
+[2026-11-25 20:22:52]
+```
+
+Давайте разбираться с тем, что еще не использовали.
+
+```bash
+auto eth2.10
+iface eth2.10 inet manual
+```
+
+В данном случае никаких дополнительных явных указаний о том, что это влан не нужно - операционная система исходя из имени интерфейса (физический_интерфейс.номер) понимает, что необходим интерфейс типа vlan с VID == 10, привязанный к физическому интерфейсу eth2. Ну а режим manual, как ранее объяснялось, нужен, чтобы не назначать IP-адрес интерфейсу.
+
+```bash
+auto Bridge10
+iface Bridge10 inet static
+        bridge_ports regex eth[2-4]\.10
+        bridge_hw 00:00:00:10:00:01
+        address 172.16.10.1/24
+```
+
+Здесь, в принципе, все уже рассматривалось, кроме конструкции `regex` при добавлении интерфейсов в бридж. `regex`, как понятно из названия, позволяет сократить запись, использовав регулярное выражение.
